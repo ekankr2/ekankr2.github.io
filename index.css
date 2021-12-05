@@ -57,6 +57,23 @@ h1{
 .period-mark{
     color: #3a7bd5;
 }
+ul>li:before{
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    content: "•";
+    color: #3a7bd5;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+}
+ul>li{
+    position: relative;
+    padding: .2rem 0 .2rem 1rem;
+}
 .big-paragraph{
     font-size: 2rem;
     line-height: 1.4;
@@ -64,4 +81,88 @@ h1{
 }
 p{
     margin: 0 0 1rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+h2{
+    font-size: 3rem;
+    margin: 4rem 0 2rem;
+    font-weight: bold;
+}
+.row{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 3rem 0;
+    border-bottom: 1px solid #eee;
+}
+.row-left{
+    -ms-flex-preferred-size: 18rem;
+    flex-basis: 18rem;
+    padding-right: 1rem;
+    flex-shrink: 0;
+}
+h3, h4{
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    font-weight: bold;
+}
+.time{
+    display: block;
+    margin-bottom: 1.5rem;
+}
+a{
+    color: #3a7bd5;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+}
+a{
+    background-color: transparent;
+}
+a:hover{
+    color: #00d2ff;
+}
+h5{
+    font-size: 1.3rem;
+    margin: 0 0 .5rem;
+    color: #333;
+}
+.role{
+    display: block;
+}
+.other{
+    padding: 3rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+@media screen and (max-width: 960px){
+    body, html{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    .big-paragraph{
+        font-size: 1.5rem;
+    }
+    .row{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .row-left{
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        padding-right: 0;
+        padding-bottom: 1rem;
+    }
+    h4{
+        font-size: 1.5rem;
+    }
 }
