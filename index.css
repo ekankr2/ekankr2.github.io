@@ -53,6 +53,11 @@ h1{
     line-height: 1.1;
     margin: 0.67em 0;
     font-weight: bold;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }
 .period-mark{
     color: #3a7bd5;
@@ -93,6 +98,30 @@ h2{
     font-size: 3rem;
     margin: 4rem 0 2rem;
     font-weight: bold;
+}
+table{
+    display: table;
+    padding: 0;
+    margin: 0 0 0.8125rem;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    border-collapse: collapse;
+    width: 100%;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+th, td{
+    text-align: left;
+    border-bottom: 1px solid hsla(0,0%,0%,0.12);
+    font-feature-settings: "tnum";
+    -moz-font-feature-settings: "tnum";
+    -ms-font-feature-settings: "tnum";
+    -webkit-font-feature-settings: "tnum";
+    padding-left: 1.08333rem;
+    padding-right: 1.08333rem;
+    padding-top: 0.8125rem;
+    padding-bottom: calc(0.8125rem - 1px);
 }
 .row{
     display: -webkit-box;
