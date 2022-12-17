@@ -1,17 +1,37 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+@import "normalize.css";
 
-*{
+* {
     box-sizing: border-box;
 }
-::selection{
+
+::selection {
     background: #00d2ff;
 }
-html{
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
+
+html,
+body {
+    font-size: 16px;
+    word-break: keep-all;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, Bazier Square,
+    Noto Sans KR, Segoe UI, Apple SD Gothic Neo, Roboto, Helvetica Neue, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+    letter-spacing: -0.3px;
+    color: #222222;
+    padding-bottom: 2rem;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-body::before{
+
+@media screen and (max-width: 960px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
+body:before {
     position: fixed;
     z-index: 1;
     top: 0;
@@ -20,178 +40,154 @@ body::before{
     width: 100%;
     height: 10px;
     background: #00d2ff;
-    background: -webkit-gradient(linear,left top,right top,from(#3a7bd5),to(#00d2ff));
-    background: linear-gradient(90deg,#3a7bd5,#00d2ff);
+    background: linear-gradient(to right, #3a7bd5, #00d2ff);
 }
-body{
-    margin: 0;
-    display: block;
-    font-size: 16px;
-    word-break: keep-all;
-    font-family: Spoqa Han Sans,sans-serif;
-    letter-spacing: -.3px;
-    color: #222;
-    padding-bottom: 2rem;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.container{
-    width: 100%;
-    max-width: 50rem;
-    margin: auto;
-}
-section{
+
+section {
     padding: 0 2rem;
 }
-:-webkit-any(article, aside, nav, section) h1{
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
+
+p {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
 }
-h1{
+
+a {
+    color: #3a7bd5;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00d2ff;
+}
+
+h1 {
     font-size: 5rem;
     line-height: 1.1;
-    margin: 0.67em 0;
-    font-weight: bold;
-    display: block;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
 }
-.period-mark{
-    color: #3a7bd5;
+
+@media screen and (max-width: 960px) {
+    h1 {
+        font-size: 3rem;
+    }
 }
-ul>li:before{
+
+h2 {
+    font-size: 3rem;
+    margin: 4rem 0 2rem 0;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+h4 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+@media screen and (max-width: 960px) {
+    h4 {
+        font-size: 1.5rem;
+    }
+}
+
+h5 {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem 0;
+    color: #333333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+ul > li {
+    position: relative;
+    padding: 0.2rem 0 0.2rem 1rem;
+}
+
+ul > li:before {
     position: absolute;
     left: 0;
     display: inline-block;
     content: "•";
     color: #3a7bd5;
 }
-ul{
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem;
-    font-size: 1.1rem;
+
+.container {
+    width: 100%;
+    max-width: 50rem;
+    margin: auto;
 }
-ul>li{
-    position: relative;
-    padding: .2rem 0 .2rem 1rem;
+
+.period-mark {
+    color: #3a7bd5;
 }
-.big-paragraph{
+
+.big-paragraph {
     font-size: 2rem;
     line-height: 1.4;
     font-weight: 500;
 }
-p{
-    margin: 0 0 1rem;
-    font-size: 1.1rem;
-    line-height: 1.4;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
+
+@media screen and (max-width: 960px) {
+    .big-paragraph {
+        font-size: 1.5rem;
+    }
 }
-h2{
-    font-size: 3rem;
-    margin: 4rem 0 2rem;
-    font-weight: bold;
-}
-table{
-    display: table;
-    padding: 0;
-    margin: 0 0 0.8125rem;
-    font-size: 1rem;
-    line-height: 1.625rem;
-    border-collapse: collapse;
-    width: 100%;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: grey;
-}
-th, td{
-    text-align: left;
-    border-bottom: 1px solid hsla(0,0%,0%,0.12);
-    font-feature-settings: "tnum";
-    -moz-font-feature-settings: "tnum";
-    -ms-font-feature-settings: "tnum";
-    -webkit-font-feature-settings: "tnum";
-    padding-left: 1.08333rem;
-    padding-right: 1.08333rem;
-    padding-top: 0.8125rem;
-    padding-bottom: calc(0.8125rem - 1px);
-}
-.row{
-    display: -webkit-box;
-    display: -ms-flexbox;
+
+.row {
     display: flex;
     padding: 3rem 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eeeeee;
 }
-.row-left{
-    -ms-flex-preferred-size: 18rem;
+
+.row-left {
     flex-basis: 18rem;
     padding-right: 1rem;
     flex-shrink: 0;
 }
-h3, h4{
-    font-size: 2rem;
-    margin: 0 0 1rem;
-    font-weight: bold;
-}
-.time{
-    display: block;
-    margin-bottom: 1.5rem;
-}
-a{
-    color: #3a7bd5;
-    -webkit-transition: color .3s ease;
-    transition: color .3s ease;
-}
-a{
-    background-color: transparent;
-}
-a:hover{
-    color: #00d2ff;
-}
-h5{
-    font-size: 1.3rem;
-    margin: 0 0 .5rem;
-    color: #333;
-}
-.role{
-    display: block;
-}
-.other{
-    padding: 3rem 0;
-    border-bottom: 1px solid #eee;
+
+.row-right {
+    flex-grow: 1;
 }
 
-@media screen and (max-width: 960px){
-    body, html{
-        font-size: 14px;
-    }
-    h1{
-        font-size: 3rem;
-    }
-    .big-paragraph{
-        font-size: 1.5rem;
-    }
-    .row{
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
+@media screen and (max-width: 960px) {
+    .row {
         flex-direction: column;
     }
-    .row-left{
-        -ms-flex-preferred-size: 100%;
+
+    .row-left {
         flex-basis: 100%;
         padding-right: 0;
         padding-bottom: 1rem;
     }
-    h4{
-        font-size: 1.5rem;
-    }
+}
+
+.other {
+    padding: 3rem 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.role {
+    display: block;
+}
+
+.project {
+    padding: 1.5rem 0;
+}
+
+.project:first-child {
+    padding-top: 0;
+}
+
+.time {
+    display: block;
+    margin-bottom: 1.5rem;
 }
