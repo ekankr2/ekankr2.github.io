@@ -20,7 +20,8 @@
             <br>
             저는 임익환입니다<span class="period-mark">.</span>
         </h1>
-        <p class="big-paragraph"> 2년 차 백엔드 엔지니어입니다.<br>
+        <p class="big-paragraph"> 2년 차 웹 개발자입니다.<br>
+            완벽보다는 완성하는 것을 중요하게 생각합니다.
             주도적인 업무를 진행할 수 있는 환경을 선호합니다.
         </p>
 
@@ -39,24 +40,66 @@
                 <div class="project">
                     <h4>TiSepX<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 사용자가 DICOM 파일을 업로드 하면, 딥러닝을 통해 질환을 분석해주는 웹 서비스인
+                    <p> 사용자의 DICOM 파일을 통해 폐질환을 분석해주는 서비스인
                         <a href="https://tisepx.com">TiSepX
                         </a>
-                        의 프론트엔드와 백엔드를 개발하였습니다.
-                        기존의 프로젝트를 혼자 맡아 새롭게 설계하고 유지보수 하였습니다.
-                        HTTPS인증 등 추가 적인 기능 구현을 통하여 판매를 위한
-                        식약처 인증을 성공 하는데에 기여 하였습니다.
+                        의 전반적인 웹 프론트엔드와 백엔드를 개발하였습니다.
+                        기존의 레거시 프로젝트를 새롭게 설계 후 리팩토링하여 확장성과 유지보수성을 향상시켰습니다.
+                        HTTPS인증, 보안강화 등 추가 적인 기능 구현을 통해 의료기기 판매를 위한
+                        식약처 인증에 성공하였습니다.
+                        현재는 서비스를 AWS로 Migration 진행중입니다.
                     </p>
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>프론트엔드 / 백엔드 기술환경 재구성 및 전체 기능 재구현</li>
+                        <li>프론트엔드 / 백엔드 재구성 및 추가 기능 구현</li>
                         <li>FastAPI 도입을 통한 생산성, 유지 보수성 향상</li>
-                        <li>Docker-compose를 도입한 배포 환경 구성</li>
-                        <li>Traefik을 활용한 리버스 프록시 구성 및 HTTPS 인증</li>
-                        <li>React-query, Zustand 도입을 통한 생산성 향상</li>
+                        <li>기존 프로젝트를 Docker를 도입한 배포 환경으로 재구성</li>
+                        <li>Nginx를 활용한 리버스 프록시 구성 및 HTTPS 인증</li>
+                        <li>React-query, Zustand 도입을 통한 생산성 향상 및 트래픽 감소</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> Python, FastAPI, Docker, Traefik, TypeScript, React, </p>
+                    <p> Python, FastAPI, Docker, Nginx, TypeScript, React, TailwindCSS</p>
+                </div>
+
+                <div class="project">
+                    <h4>Homepage<span class="period-mark">.</span></h4>
+                    <h5>Description<span class="period-mark">.</span></h5>
+                    <p> 회사 소개를 위한 <a href="https://medicalip.com/">웹 페이지</a>를 개발하였습니다.<br/>
+                        기존에 존재하던 홈페이지가 소개 페이지 특성상 검색엔진 최적화가 필요하다고 판단하여,
+                        SSR 도입 및 SEO 최적화를 통해 방문자 수를 증가시켰습니다.
+                    </p>
+                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>프론트엔드 개발</li>
+                        <li>TypeScript를 도입하여 유지 보수성 향상</li>
+                        <li>TailwindCSS를 도입하여 생산성 향상</li>
+                        <li>SSR을 도입 및 SEO 최적화를 통해 방문자 수 증가</li>
+                        <li>Vercel를 활용한 자동 배포 구성</li>
+                    </ul>
+                    <h5>Tech Stack<span class="period-mark">.</span></h5>
+                    <p> TypeScript, React, Next.js, TailwindCSS</p>
+                </div>
+
+                <div class="project">
+                    <h4>Visual Printing<span class="period-mark">.</span></h4>
+                    <h5>Description<span class="period-mark">.</span></h5>
+                    <p> STL파일을 웹에서 볼 수 있는 서비스인 Visual Printing의 프론트엔드와 백엔드를 개발하였습니다.
+                        프론트엔드는 VanillaJS를 React로 변환하여 생산성을 향상시켰습니다.
+                        백엔드는 레거시 Node.js 서버를 리팩토링을 통해 유지보수성을 높였습니다.
+                        현재는 병원 내부에서 사용되고 있어 따로 배포된 페이지는 없습니다.
+                        Three.js 부분에 대한 간단한 예시는 <a href="https://github.com/ekankr2/threejs-STL-example">오픈소스로</a>
+                        만들어 보았습니다.
+                    </p>
+                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>프론트엔드 및 백엔드 개발</li>
+                        <li>Nodejs 서버에 TypeScript를 도입하여 유지 보수성 향상</li>
+                        <li>기능 확장이 불가능하던 레거시 프로젝트 리팩토링</li>
+                        <li>기존 서버의 보안 취약점 개선 (로그인, URL 암호와 등)</li>
+                        <li>생산성 향상을 위한 React 도입</li>
+                    </ul>
+                    <h5>Tech Stack<span class="period-mark">.</span></h5>
+                    <p> TypeScript, Express.js, React, Three.js</p>
                 </div>
             </div>
 
@@ -83,7 +126,7 @@
                     <h5>What I Learned<span class="period-mark">.</span></h5>
                     <ul>
                         <li>FastAPI Utilities를 활용한 class 기반의 라우터 설계</li>
-                        <li>alembic을 활용한 DB 버전 관리</li>
+                        <li>alembic을 활용한 DB 버전 관리 방법</li>
                         <li>Pydantic을 활용한 데이터 유효성 검증 및 설정 관리</li>
                         <li>Pytest를 활용한 테스트 코드 구성</li>
                     </ul>
@@ -102,7 +145,8 @@
             <h3>Blog<span class="period-mark">.</span></h3>
             <span class="role">Author, Maintainer</span> <span class="time"><time datetime="2016-09">2021. 05.</time> - 현재</span>
             <p>
-                제가 새롭게 배운 내용이나 해결했던 문제들을 <a href="https://blog.naver.com/ekankr2" target="_blank">개인 블로그</a>에 공유하여 다른 사람들에게 도움이 되고자 하고 있습니다.<br>
+                제가 새롭게 배운 내용이나 해결했던 문제들을 <a href="https://blog.naver.com/ekankr2" target="_blank">개인 블로그</a>에 공유하여 다른
+                사람들에게 도움이 되고자 하고 있습니다.<br>
             </p>
         </div>
     </section>
@@ -131,18 +175,18 @@
         <div class="other">
             <h3>Node Express<span class="period-mark">.</span></h3>
             <ul>
-                <li>타입스크립트를 활용한 OOP 방식으로 프로젝트를 구성합니다.</li>
+                <li>타입스크립트를 활용한 OOP 구조로 프로젝트를 구성합니다.</li>
                 <li>다양한 미들웨어 사용에 익숙합니다.</li>
-                <li>TypeORM을 활용하여 DB를 제어할 수 있습니다.</li>
+                <li>TypeORM을 활용하여 DB를 제어합니다.</li>
                 <li>Swagger를 구성하여 api 시각화를 할 수 있습니다.</li>
-                <li>Jest를 활용한 테스트 코드를 작성할 수 있습니다.</li>
+                <li>Jest를 활용하여 테스트 코드를 작성합니다.</li>
             </ul>
         </div>
         <div class="other">
             <h3>Spring Boot<span class="period-mark">.</span></h3>
             <ul>
-                <li>때에 따라 JPA와 QueryDSL을 적절히 활용합니다.</li>
-                <li>Java로 이루어진 프로젝트를 Kotlin으로 migration할 수 있습니다.</li>
+                <li>주로 JPA를 활용하여 DB를 제어합니다.</li>
+                <li>Java로 이루어진 프로젝트를 Kotlin으로 migrate 할 수 있습니다.</li>
             </ul>
         </div>
         <div class="other">
@@ -156,9 +200,8 @@
         <div class="other">
             <h3>DevOps<span class="period-mark">.</span></h3>
             <ul>
-                <li>Docker-compose를 활용해 다양한 배포 환경 구성을 할 수 있습니다.</li>
-                <li>Traefik을 활용해 Reverse Proxy를 구성하고 HTTPS 인증을 받을 수 있습니다.</li>
-                <li>Jenkins를 활용한 CI를 구성할 수 있습니다.</li>
+                <li>Docker를 활용해 다양한 배포 환경 구성한 경험이 있습니다.</li>
+                <li>Nginx을 활용해 Reverse Proxy를 구성하고 HTTPS 인증을 받을 수 있습니다.</li>
             </ul>
         </div>
     </section>
