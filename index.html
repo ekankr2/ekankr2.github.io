@@ -21,11 +21,10 @@
             저는 임익환입니다<span class="period-mark">.</span>
         </h1>
         <p class="big-paragraph"> 3년 차 웹/앱 개발자입니다.<br>
+            완벽하지 않더라도 우선 완성하는 것을 중요하게 생각합니다.
             비효율적인 업무 프로세스를 개선하는 것을 좋아합니다.
-            당근마켓과 같은 사람들이 열광하는 서비스를 만들어 보고싶은 꿈이 있습니다.<br/>
             체계가 없더라도 주도적으로 업무를 진행할 수 있습니다.
         </p>
-
     </section>
 
     <section>
@@ -45,23 +44,34 @@
                         <a href="https://tisepx.com">TiSepX
                         </a>
                         의 프론트엔드와 백엔드를 개발하였습니다.
-                        기존 프로젝트가 가진 확장성과 유지보수성의 문제점을 .
+                        기존 프로젝트 구조를 개선하여 확장성, 유지보수성 문제를 해결하였으며,
                         HTTPS인증, 보안강화 등 추가 적인 기능 구현을 통해 의료기기 판매를 위한
                         식약처 인증에 성공하였습니다.
                     </p>
                     <h5>What I Did as Frontend<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>프론트엔드 / 백엔드 재구성 및 추가 기능 구현</li>
-                        <li>FastAPI 도입을 통한 생산성, 유지 보수성 향상</li>
-                        <li>기존 프로젝트를 <a href="https://blog.naver.com/ekankr2/222935224141" target="_blank">Docker를 도입한 배포 환경</a>으로 재구성</li>
-                        <li>Nginx를 활용한 리버스 프록시 구성 및 HTTPS 인증</li>
-                        <li>생산성 향상을 위해 기존 Redux를 <a href="https://blog.naver.com/ekankr2/222660470026" target="_blank">React-query로
+                        <li>생산성 향상을 위해 기존 Redux State를 <a href="https://blog.naver.com/ekankr2/222660470026"
+                                                          target="_blank">React-query로
                             변경</a>
                         </li>
-                        <li><a href="https://blog.naver.com/ekankr2/222674738339" target="_blank">Zustand를 도입</a>하여 남아있는 Redux boilerplate 제거</li>
+                        <li><a href="https://blog.naver.com/ekankr2/222674738339" target="_blank">Zustand를 도입</a>하여 남아있는
+                            Redux boilerplate 제거
+                        </li>
+                        <li>TailwindCSS를 도입하여 리액트의 CSS 복잡성 문제 해결</li>
                     </ul>
+
+                    <h5>What I Did as Backend<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>Flask 프로젝트를 FastAPI로 변환하여 생산성, 유지 보수성 향상</li>
+                        <li>기존 프로젝트를 <a href="https://blog.naver.com/ekankr2/222935224141" target="_blank">Docker를 도입한
+                            배포 환경</a>으로 재구성
+                        </li>
+                        <li>Nginx와 Certbot을 활용한 리버스 프록시 환경 구성 및 HTTPS 인증서 발급 자동화</li>
+                        <li>AWS를 활용하여 기존 서버 클라우드화</li>
+                    </ul>
+
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> Python, FastAPI, Docker, Nginx, TypeScript, React, TailwindCSS</p>
+                    <p>Python, FastAPI, Docker, Nginx, TypeScript, React, TailwindCSS, AWS</p>
                 </div>
 
                 <div class="project">
@@ -86,24 +96,29 @@
                 <div class="project">
                     <h4>Visual Printing<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> STL파일을 웹에서 볼 수 있는 서비스인 Visual Printing의 프론트엔드와 백엔드를 개발하였습니다.
+                    <p> 환자의 장기 모델을 웹에서 볼 수 있는 서비스인 Visual Printing의 프론트엔드와 백엔드를 개발하였습니다.
                         프론트엔드는 VanillaJS를 React로 변환하여 생산성을 향상시켰습니다.
-                        백엔드는 레거시 Node.js 서버를 리팩토링을 통해 유지보수성을 높였습니다.
-                        현재는 병원 내부에서 사용되고 있어 따로 배포된 페이지는 없습니다.
+                        백엔드는 레거시 Node.js 서버를 리팩토링을 통해 유지보수성 및 확장성을 향상시켰습니다.
+                        현재는 병원 내부에서 사용되고 있어 따로 외부에 배포된 페이지는 없습니다.
                         Three.js 부분에 대한 간단한 예시는 <a href="https://github.com/ekankr2/threejs-STL-example"
                                                    target="_blank">오픈소스로</a>
                         만들어 보았습니다.
                     </p>
-                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <h5>What I Did as Frontend<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>프론트엔드 및 백엔드 개발</li>
-                        <li>Nodejs 서버에 TypeScript를 도입하여 유지 보수성 향상</li>
-                        <li>기능 확장이 불가능하던 레거시 프로젝트 리팩토링</li>
-                        <li>기존 서버의 보안 취약점 개선 (로그인, URL 암호와 등)</li>
-                        <li>생산성 향상을 위한 React 도입</li>
+                        <li>생산성 향상을 위해 Vanilla JS를 React로 교체</li>
+                        <li>React Three Fiber를 활용하여 Three.js 코드 가독성 향상</li>
+                        <li>30초가 걸리던 초기 렌더링 속도를 1초 미만으로 단축</li>
+                        <li>URL만으로 다른 사용자의 정보를 진입할 수 있던 문제 해결</li>
+                    </ul>
+                    <h5>What I Did as Backend<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>기능 확장이 불가능하던 레거시 프로젝트 모듈화 및 리팩토링</li>
+                        <li>TypeScript를 활용하여 OOP 방식으로 프로젝트 재구성</li>
+                        <li>세션 도입, 비밀번호 암호화 등 보안 강화</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> TypeScript, Express.js, React, Three.js</p>
+                    <p> TypeScript, Node.js, Express.js, React, Three.js</p>
                 </div>
             </div>
 
@@ -138,33 +153,6 @@
                     <p>Python, FastAPI, PostgreSQL, Docker</p>
                 </div>
             </div>
-
-        </div>
-
-        <div class="row">
-            <div class="row-left">
-                <h3>당근마켓 클론<span class="period-mark">.</span></h3>
-                <span class="role">Maintainer</span>
-                <span><time datetime="2021-12">2021. 12</time> - <time datetime="now"></time></span>
-            </div>
-            <div class="row-right">
-                <div class="project">
-                    <h4>당근마켓 클론코딩<span class="period-mark">.</span></h4>
-                    <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 당근마켓 서비스에 영감을 받아 직접 당근마켓을 똑같이 구현해 보았습니다.
-                        직접 웹과 앱, 백엔드를 만들어 보았습니다.
-                        상품등록, 상품목록보기 등등 다양한 기능을 구현하였습니다.
-                    </p>
-                    <h5>What I Learned<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>JavaScript를 사용한 웹/앱 구현</li>
-                        <li>Firebase를 사용한 로그인 처리</li>
-                        <li>Firebase를 사용한 상품 등록 / 목록 기능 구현</li>
-                    </ul>
-                    <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p>JavaScript, Kotlin, Firebase</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -186,18 +174,18 @@
         <div class="other">
             <h3>Overall<span class="period-mark">.</span></h3>
             <ul>
-                <li> 유지 보수성, 생산성 및 확장성이 뛰어난 코드가 가치있는 코드라고 생각합니다.</li>
+                <li> 유지 보수성 및 확장성이 뛰어난 코드가 가치있는 코드라고 생각합니다.</li>
                 <li> 업무에 필요하다면 능숙한 분야가 아니더라도 적극적으로 탐색하여 최적의 결과를 낼 수 있도록 노력합니다.</li>
                 <li> 문제에 직면하면 스스로 탐구하고 해결하기 위해 노력합니다.</li>
-                <li> 비효율적인 프로세스를 개선하는 것을 좋아합니다.</li>
+                <li> 비효율적인 프로세스를 개선하여 생산성을 향상시키는 것을 좋아합니다.</li>
             </ul>
         </div>
 
         <div class="other">
             <h3>Communication<span class="period-mark">.</span></h3>
             <ul>
-                <li> 영어에 능숙하여 공식 문서나 자료를 영어로 찾아볼 수 있습니다.</li>
-                <li> 커뮤니케이션은 적은 것보다는 많은게 좋다고 믿습니다.</li>
+                <li> 영어에 능숙하여 공식 문서나 자료를 영어로 찾아보는 편입니다.</li>
+                <li> 팀원 간의 커뮤니케이션은 적은 것보다는 많은게 좋다고 믿습니다.</li>
             </ul>
         </div>
 
@@ -223,21 +211,14 @@
         <div class="other">
             <h3>Kotlin<span class="period-mark">.</span></h3>
             <ul>
-                <li>코틀린으로 웹 서버를 구현해본 경험이 있습니다.</li>
-            </ul>
-        </div>
-
-        <div class="other">
-            <h3>JSP<span class="period-mark">.</span></h3>
-            <ul>
-                <li>JSP를 사용하여 웹페이지를 구현해본 경험이 있습니다.</li>
+                <li>Java로 이루어진 Spring Boot프로젝트를 Kotlin으로 변환해본 경험이 있습니다.</li>
             </ul>
         </div>
         <div class="other">
             <h3>Spring Boot<span class="period-mark">.</span></h3>
             <ul>
                 <li>주로 JPA를 활용하여 DB를 제어합니다.</li>
-                <li>Java로 이루어진 프로젝트를 Kotlin으로 migrate 할 수 있습니다.</li>
+                <li>JUnit5를 활용하여 단위 테스트를 작성합니다.</li>
             </ul>
         </div>
         <div class="other">
@@ -251,8 +232,9 @@
         <div class="other">
             <h3>DevOps<span class="period-mark">.</span></h3>
             <ul>
-                <li>Docker를 활용해 다양한 배포 환경 구성한 경험이 있습니다.</li>
-                <li>Nginx을 활용해 Reverse Proxy를 구성하고 HTTPS 인증을 받을 수 있습니다.</li>
+                <li>Docker를 활용하여 다양한 배포 환경을 구성한 경험이 있습니다.</li>
+                <li>Nginx을 활용해 Reverse Proxy를 구성하고 HTTPS 인증을 자동화 할 수 있습니다.</li>
+                <li>기존의 On-premise 서버를 AWS를 활용한 클라우드 환경으로 Migrate한 경험이 있습니다.</li>
             </ul>
         </div>
     </section>
