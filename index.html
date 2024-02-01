@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="project">
-                    <h4>홈페이지 개선<span class="period-mark">.</span></h4>
+                    <h4>홈페이지<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
                     <p> 외주로 만들어진 기존 홈페이지는 메뉴 마다 개발 업체와 도메인 주소가 다르다는 문제가 있었습니다.
                         이는 SEO에 좋지 않다는 문제가 있었으며, 페이지간 쿠키와 같은 데이터를 공유하기 어려웠습니다.
@@ -70,9 +70,8 @@
                     </p>
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>Next.js를 활용한 SSR 홈페이지 개발 </li>
+                        <li>Next.js를 활용한 SSR 도입 </li>
                         <li><a href="https://vercel.com" target="_blank">Vercel</a>을 활용한 배포 및 CI/CD</li>
-                        <li>AWS ALB, ELB, VPC를 활용하여 은행 및 통신사와의 전용 망 구성 및 로드밸런싱</li>
                         <li>Oracle DB에 저장되어 있던 정보를 MongoDB로 마이그레이션</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
@@ -80,13 +79,28 @@
                 </div>
 
                 <div class="project">
-                    <h4>셀프 개통<span class="period-mark">.</span></h4>
+                    <h4>웰컴저축은행 신청서<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 고객이 직접 휴대폰을 개통할 수 있는 셀프 개통 서비스를 개발하였습니다.
-                        기존의 프로젝트는 외주 업체에서 만든 PHP로 이루어져 있었으나,
-                        직접 탐구하여 프로젝트를 재개발하였습니다.<br/>
-                        빠른 개발이 필요하였기에 생산성이 높은 기술 스택을 위주로 채택하였습니다.
-                        또한 통신사와 API 통신할 수 있도록 전용 서버 망을 구성하였습니다.
+                    <p> 웰컴저축은행 앱에서 스마텔 요금제를 가입할 수 있도록 개발하였습니다.
+                        전용망이 필수인 은행권 서버와 통신하기 위해 전용망을 구성할 때 어려움이 있었으나,
+                        AWS Support와 인터넷 검색을 활용하여 전용망을 구성하는데에 성공하였습니다.
+                    </p>
+                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>AWS VPC, NLB 를 활용하여 은행권 서버와 전용망 구성</li>
+                        <li>신청서 Frontend 및 Backend 개발</li>
+                    </ul>
+                    <h5>Tech Stack<span class="period-mark">.</span></h5>
+                    <p> AWS - VPC, EC2, NLB, ALB, Next.js, MongoDB</p>
+                </div>
+
+                <div class="project">
+                    <h4>LGU+ 셀프 개통<span class="period-mark">.</span></h4>
+                    <h5>Description<span class="period-mark">.</span></h5>
+                    <p> 셀프개통은 고객이 직접 유심을 통해 휴대폰을 개통할 수 있는 서비스입니다.
+                        기존에 외주 업체로부터 만들어진 셀프개통 서비스가 있었으나, 성공률이 10%에 불과하였으며 오개통이 되는 등 여러가지 문제가 있었습니다.
+                        이 문제를 해결하기 위해 새로운 셀프 개통 서비스를 개발하였습니다.
+                        빠르게 문제를 해결할 필요가 있었기에 생산성이 높은 기술 스택을 위주로 채택하였습니다.
                     </p>
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
