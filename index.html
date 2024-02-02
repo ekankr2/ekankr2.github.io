@@ -20,7 +20,7 @@
             <br>
             저는 임익환입니다<span class="period-mark">.</span>
         </h1>
-        <p class="big-paragraph"> 3년 차 웹 개발자입니다.<br>
+        <p class="big-paragraph"> 3년 차 웹 엔지니어입니다.<br>
             TypeScript, Python, MongoDB, Nginx, AWS 등의 기술로 시스템을 설계, 개발, 운영한 경험이 있습니다.<br/>
             레거시에서 신규 시스템으로 전환, 클라우드 환경(AWS)으로 마이그레이션 등 다양한 경험을 가지고 있습니다.<br/>
             완벽하지 않더라도 우선 완성하는 것을 중요하게 생각합니다.
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="project">
-                    <h4>웰컴저축은행 신청서<span class="period-mark">.</span></h4>
+                    <h4>웰컴저축은행 가입 신청서<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
                     <p> 웰컴저축은행 앱에서 스마텔 요금제를 가입할 수 있도록 개발하였습니다.
                         은행권 서버와 통신하기 위해 전용망을 구성할 때 어려움이 있었으나,
@@ -91,7 +91,7 @@
                     <ul>
                         <li>AWS VPC, NLB 를 활용하여 은행권 서버와 전용망 구성</li>
                         <li>AWS ALB 를 활용하여 로드밸런싱 구축</li>
-                        <li>Frontend 및 Backend 개발 및 운영</li>
+                        <li>Frontend, Backend 개발 및 운영</li>
                         <li>Docker를 이용하여 배포 환경 구축</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
@@ -103,20 +103,33 @@
                     <h5>Description<span class="period-mark">.</span></h5>
                     <p> 셀프개통은 고객이 직접 유심을 통해 휴대폰을 개통할 수 있는 서비스입니다.
                         기존의 레거시 셀프개통은 성공률이 10%에 불과하였으며 오개통이 되는 등 여러가지 문제가 있었습니다.
-                        이 문제를 해결하기 위해 신규 셀프 개통 서비스를 개발하였습니다.
-                        빠르게 오픈할 필요가 있었기에 생산성이 높은 기술 스택을 위주로 시스템을 설계하였습니다.
+                        이 문제를 해결하기 위해 생산성 높은 기술 스택을 위주로 시스템을 설계하여 빠르게 신규 셀프 개통 서비스를 개발하였습니다.
                     </p>
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>Next.js, TailwindCSS를 활용한 Frontend 개발</li>
-                        <li>Python FastAPI를 활용한 Backend 개발</li>
+                        <li>Frontend, Backend 개발 및 운영</li>
                         <li>Docker를 이용하여 배포 환경 구축</li>
                         <li>AWS ALB를 활용한 로드밸런싱</li>
                         <li>Net Gateway를 활용하여 outbound IP 설정</li>
                         <li>신청 프로세스에 Redis를 활용하여 api 간 데이터 공유</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p>AWS - ALB, VPC, EC2, TypeScript, Next.js, TailwindCSS, Docker, Redis</p>
+                    <p>AWS - ALB, VPC, EC2, TypeScript, Next.js, TailwindCSS, FastAPI, Docker, Redis</p>
+                </div>
+
+                <div class="project">
+                    <h4>선불 충전 서비스<span class="period-mark">.</span></h4>
+                    <h5>Description<span class="period-mark">.</span></h5>
+                    <p> 고객이 선불 요금을 직접 충전할 수 있는 서비스를 개발하였습니다.
+                    </p>
+                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>Frontend, Backend 개발 및 운영</li>
+                        <li>이니시스 결제 모듈 연동</li>
+                        <li>휴대폰 인증번호 발송 기능 구현</li>
+                    </ul>
+                    <h5>Tech Stack<span class="period-mark">.</span></h5>
+                    <p> TypeScript, Next.js, MongoDB, Redis</p>
                 </div>
             </div>
         </div>
@@ -295,42 +308,34 @@
         </div>
 
         <div class="other">
+            <h3>Next.js, React<span class="period-mark">.</span></h3>
+            <ul>
+                <li>상황에 따라 서버와 클라이언트 컴포넌트를 적절히 활용합니다.</li>
+                <li>타입스크립트 환경에 익숙합니다.</li>
+                <li>합리적인 방식으로 컴포넌트를 분리하여 재사용성을 높입니다.</li>
+                <li>클라이언트 캐싱을 적절히 활용하여 DB 접근 횟수를 줄입니다.</li>
+                <li>React 사용 시 React-query와 Zustand 조합을 사용하여 상태를 관리합니다.</li>
+            </ul>
+        </div>
+
+        <div class="other">
             <h3>Node Express<span class="period-mark">.</span></h3>
             <ul>
                 <li>타입스크립트를 활용한 OOP 구조로 프로젝트를 구성합니다.</li>
-                <li>다양한 미들웨어 사용에 익숙합니다.</li>
+                <li>미들웨어 사용에 익숙합니다.</li>
                 <li>TypeORM을 활용하여 DB를 제어합니다.</li>
                 <li>Swagger를 구성하여 api 시각화를 할 수 있습니다.</li>
                 <li>Jest를 활용하여 테스트 코드를 작성합니다.</li>
             </ul>
         </div>
-        <div class="other">
-            <h3>Kotlin<span class="period-mark">.</span></h3>
-            <ul>
-                <li>Java로 이루어진 Spring Boot프로젝트를 Kotlin으로 변환해본 경험이 있습니다.</li>
-            </ul>
-        </div>
-        <div class="other">
-            <h3>Spring Boot<span class="period-mark">.</span></h3>
-            <ul>
-                <li>주로 JPA를 활용하여 DB를 제어합니다.</li>
-                <li>JUnit5를 활용하여 단위 테스트를 작성합니다.</li>
-            </ul>
-        </div>
-        <div class="other">
-            <h3>React<span class="period-mark">.</span></h3>
-            <ul>
-                <li>합리적인 방식으로 컴포넌트를 분리하여 재사용성을 높입니다.</li>
-                <li>타입스크립트 환경에 익숙합니다.</li>
-                <li>현재는 React-query와 Zustand 조합을 사용하여 store를 관리하고 있습니다.</li>
-            </ul>
-        </div>
+
         <div class="other">
             <h3>DevOps<span class="period-mark">.</span></h3>
             <ul>
-                <li>Docker를 활용하여 다양한 배포 환경을 구성한 경험이 있습니다.</li>
-                <li>Nginx을 활용해 Reverse Proxy를 구성하고 HTTPS 인증을 자동화 할 수 있습니다.</li>
-                <li>기존의 On-premise 서버를 AWS를 활용한 클라우드 환경으로 Migrate한 경험이 있습니다.</li>
+                <li>Docker를 활용하여 Node.js, Python, Nginx 등의 배포 환경을 구성한 경험이 있습니다.</li>
+                <li>Nginx을 활용해 Reverse Proxy를 구성하고 HTTPS 인증을 자동화 한 경험이 있습니다.</li>
+                <li>AWS VPC를 직접 구성하고 VPN을 이용한 전용망을 구성한 경험이 있습니다.</li>
+                <li>AWS ALB를 이용하여 로드밸런싱을 구성한 경험이 있습니다.</li>
             </ul>
         </div>
     </section>
