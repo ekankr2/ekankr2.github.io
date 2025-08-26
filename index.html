@@ -62,138 +62,97 @@
                 </div>
 
                 <div class="project">
-                    <h4>프로세스 개선<span class="period-mark">.</span></h4>
-                    <h5>기술 스택 전환<span class="period-mark">.</span></h5>
-                    <p>처음엔 Spring Boot, MySQL 조합으로 개발을 시작하였습니다.
-                        하지만 운영진의 요구에 따라 빠른 개발과 배포가 필요했고, DB 설계가 자주 변경되어야만 했습니다.
-                        따라서 Next.js, FastAPI, MongoDB, Vercel 등 생산성 높은 기술 위주로 변경하여 요구 사항에 빠르게 대응할 수 있었습니다.</p>
-                    <h5>Backend blocking 해결<span class="period-mark">.</span></h5>
-                    <p>셀프개통과 같은 통신사 api는 호출에 20초 이상이 걸릴 때가 있습니다.
-                        Python FastAPI로 해당 api를 구현했을 때 가끔 blocking이 되는 이슈가 있었습니다.
-                        Serverless(Lambda)를 이용하여 api가 병렬처리 되도록 구성하여 이슈를 해결하였습니다.
+                    <h4>아키텍처 진화 및 규제 대응<span class="period-mark">.</span></h4>
+
+                    <h5>Phase 1: 생산성 중심 기술 스택 전환<span class="period-mark">.</span></h5>
+                    <p>
+                        초기 React + Spring Boot + MySQL 조합은 잦은 요구사항 변경과 빠른 개발 요구에 적합하지 않았습니다.
+                        운영진의 신속한 의사결정에 대응하기 위해 Next.js, FastAPI 등
+                        생산성이 높은 기술 스택으로 전환했습니다.
                     </p>
-                    <h5>Serverless를 위한 Proxy 서버</h5>
-                    <p>Vercel, AWS Lambda와 같은 서버리스 서비스는 고정된 ip가 없어, 타사 api를 사용하는 데에 제약이 있었습니다.
-                        서버리스 서비스를 사용하면서도 고정된 ip를 사용할 수 있도록
-                        Nginx를 활용하여 <a href="https://blog.naver.com/ekankr2/223333412831" target="_blank">Proxy 서버를
-                            구축</a>하였습니다.
+
+                    <h5>Phase 2: 성능 문제 해결을 위한 서버리스 도입<span class="period-mark">.</span></h5>
+                    <p>
+                        FastAPI에서 응답 시간이 긴 외부 API 호출 시 블로킹 현상이 발생했습니다.
+                        프로세스 수를 늘려도 개선되지 않아, Vercel 서버리스 함수의 Lambda 기반 병렬처리를 도입했습니다.
+                        이 과정에서 스키마 유연성을 위해 MongoDB를 도입했으며, 동시에 Nginx 기반 프록시 서버를 구축하여
+                        서버리스 환경에서도 고정 IP를 확보했습니다.
                     </p>
-                    <h5>DevOps<span class="period-mark">.</span></h5>
-                    <p>CI/CD를 직접 구성하는 것 보다 외부 서비스에 의존하고, 개발에 집중하는 것이 회사에 더 이득이라고 판단되어,
-                        <a href="https://vercel.com" target="_blank">Vercel</a>을 활용하여 CI/CD를 구성하였습니다.</p>
+
+                    <h5>Phase 3: ISMS 인증 대응을 위한 내부망 구성<span class="period-mark">.</span></h5>
+                    <p>
+                        ISMS 정보보안 관리체계 인증 요구사항에 따라 모든 서비스를 내부망에 구성해야 했습니다.
+                        서버리스 환경으로는 불가능한 요구사항이어서, AWS VPC 기반 전용 인프라로 전환하고
+                        ECS를 도입하여 컨테이너 기반 배포 환경을 구축했습니다.
+                        또한 Zone 분리 보안 원칙에 따라 기존 데이터베이스 RDS Aurora 로 이관하고, 별도 서브넷으로 분리하여 보안성을 강화했습니다.
+                        이 과정에서 기존 Vercel 코드의 재사용성을 고려하여 Node.js Fastify를 도입했습니다.
+                    </p>
+
+                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>요구사항 변화에 따른 기술 스택 전환 전략 수립 및 실행</li>
+                        <li>성능 병목 지점 분석 및 서버리스 기반 해결책 도출</li>
+                        <li>고정 IP 요구사항을 위한 Nginx 프록시 서버 아키텍처 설계</li>
+                        <li>ISMS 인증 요구사항 분석 및 보안 정책 준수를 위한 내부망 설계</li>
+                        <li>AWS VPC, ECS 기반 컨테이너 인프라 구축</li>
+                        <li>데이터베이스 진화: MySQL → MongoDB → Aurora Postgres</li>
+                        <li>인프라 분리: Zone 분리 원칙에 따른 데이터베이스 독립 구성</li>
+                        <li>각 단계별 무중단 전환을 위한 점진적 마이그레이션 전략 수립</li>
+                    </ul>
+
+                    <h5>Tech Stack Evolution<span class="period-mark">.</span></h5>
+                    <p>React + Spring Boot + MySQL → Next.js + FastAPI → Vercel + MongoDB → Node.js Fastify + ECS + Aurora</p>
                 </div>
 
                 <div class="project">
-                    <h4>홈페이지<span class="period-mark">.</span></h4>
+                    <h4>스마텔 통합 플랫폼<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 기존 홈페이지는 페이지 마다 개발 업체와 도메인 주소가 다른 문제가 있었습니다.
-                        이는 SEO에 좋지 않았으며, 페이지간 쿠키와 같은 데이터를 공유하기 어려웠습니다.
-                        기존 홈페이지의 문제점들을 개선하기 위해 새로운 <a href="https://smartel.kr" target="_blank">홈페이지</a>를 자체 개발하였습니다.
-                        SEO를 고려하여 개발하였기에 오픈 일주일만에 구글 검색 1페이지에 노출되었으며, 조회수 10만회를 달성하였습니다.
+                    <p>
+                        외주업체별로 분산된 기존 시스템의 통합을 위해, 스마텔 비즈니스 프로세스를 담은 통합 플랫폼을 설계하고 개발했습니다.
+                        고객용 서비스(가입, 충전, 셀프개통)와 직원용 페이지를 포함한 시스템으로 구축하여, 현재 50만명의 고객 데이터 업무 처리를 하고 있습니다.
                     </p>
+                    <h5>Achievements<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li><strong>SEO 최적화</strong> - 구글 검색 1페이지 진입</li>
+                        <li><strong>가입 프로세스 개선</strong> - 온라인을 통한 하루 1천명 가입 처리, 전자서명으로 명의도용 방지</li>
+                        <li><strong>셀프개통 개선</strong> - 기존 성공률 5%에서 대폭 향상, 오개통 문제 해결</li>
+                        <li><strong>운영 효율화</strong> - 직원용 페이지로 홈페이지, 요금제, 고객 관리 업무 자동화</li>
+                    </ul>
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>서비스 개발 및 운영</li>
-                        <li>Next.js를 활용한 SSR 기반 Frontend 개발</li>
-                        <li>Redis를 활용한 데이터 캐싱</li>
-                        <li>Vercel을 활용한 CI/CD</li>
-                        <li>Oracle DB -> MongoDB 마이그레이션</li>
-                        <li>AWS S3, Route53을 이용하여 이전 도메인 <a href="https://blog.naver.com/ekankr2/223333415210"
-                                                            target="_blank">redirection 적용</a></li>
+                        <li><strong>풀스택 플랫폼 설계</strong> - 고객용 서비스와 관리자 백오피스를 포함한 통합 시스템 아키텍처 설계</li>
+                        <li><strong>Frontend 개발</strong> - Next.js SSR 기반 고객용 플랫폼 및 관리자 대시보드 구현</li>
+                        <li><strong>Backend 개발</strong> - 3사 통신사 API 통합, 20초 이상 소요되는 외부 API 안정적 처리</li>
+                        <li><strong>관리 시스템</strong> - 홈페이지 콘텐츠 관리, 요금제 등록/수정, 고객 관리 기능 개발</li>
+                        <li><strong>보안 시스템</strong> - 이니시스 전자서명 연동으로 명의도용 방지 및 신청자 일치 여부 검증</li>
+                        <li><strong>결제 시스템</strong> - 이니시스 결제 모듈 연동</li>
+                        <li><strong>성능 최적화</strong> - Redis를 활용한 캐싱 및 신청, 개통 속도 향상</li>
+                        <li><strong>인프라 구축</strong> - AWS ELB, VPC, ECS Fargate 등</li>
+                        <li><strong>DB 마이그레이션</strong> - Oracle DB > Postgresql</li>
+                        <li><strong>DevOps</strong> - Github Actions CI/CD, Codedeploy</li>
+                        <li><strong>문제 해결</strong> - 서비스 성장에 따라 EC2 → FastAPI → Vercel → ECS 전환 등
+                            지속적인 아키텍처 최적화를 통해 확장성과 안정성을 확보
+                        </li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> TypeScript, Next.js, TailwindCSS, FastAPI, MongoDB, Redis, AWS</p>
-                </div>
-
-                <div class="project">
-                    <h4>선불 충전 서비스<span class="period-mark">.</span></h4>
-                    <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 고객이 선불 요금을 직접 충전할 수 있는 웹 페이지를 개발하였으며 결제 모듈을 연동하여 결제 기능을 구현하였습니다.
-                    </p>
-                    <h5>What I Did<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>전반적인 Frontend, Backend 개발</li>
-                        <li>3사 통신사의 선불 충전 API 개발</li>
-                        <li>웹 페이지 이니시스 결제 모듈 연동</li>
-                        <li>Redis를 활용한 휴대폰 인증번호 발송 기능 구현</li>
-                    </ul>
-                    <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> TypeScript, Next.js, MongoDB, Redis</p>
-                </div>
-
-                <div class="project">
-                    <h4>온라인 가입 신청서<span class="period-mark">.</span></h4>
-                    <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 스마텔의 요금제를 가입할 수 있는 신청서입니다.
-                        처음에는 통신 도메인에 대한 이해도가 부족하여 개발에 어려움이 있었으나,
-                        시행착오를 거쳐 하루 1천명의 가입자를 담당하는 스마텔 핵심 서비스를 개발하였습니다.
-                        명의 도용 개통을 방지하기 위해 전자서명 기능을 탑재하고, 서버단에서 신청자 일치 여부 검증을 진행하였습니다.
-                    </p>
-                    <h5>What I Did<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>Frontend, Backend 개발 및 운영</li>
-                        <li>고객 친화적인 UX 적용</li>
-                        <li>카카오, NICE 공인인증서 전자서명 기능 개발</li>
-                        <li>작성중인 신청 정보를 Redis에 저장하여 속도 향상</li>
-                        <li>Vercel을 활용한 무중단 배포</li>
-                    </ul>
-                    <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> AWS - VPC, EC2, NLB, ALB, Next.js, MongoDB, Docker</p>
+                    <p>AWS, TypeScript, Next.js, Node.js, PostgreSQL, Redis, Github Actions</p>
                 </div>
 
                 <div class="project">
                     <h4>웰컴저축은행 가입 신청서<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 웰컴저축은행 앱에서 스마텔 요금제를 가입할 수 있도록 개발하였습니다.
-                        은행권 서버와 통신하기 위해 전용망을 구성할 때 어려움이 있었으나,
-                        AWS Support와 인터넷 검색을 활용하여 전용망을 구성하는데에 성공하였습니다.
+                    <p> 웰컴저축은행 앱에서 스마텔 요금제를 가입할 수 있는 페이지를 개발하였습니다.
+                        은행권 보안 정책에 따른 전용망 구성이 필요했으나,
+                        네트워크 인프라 설계를 통해 안전한 통신 환경을 성공적으로 구축했습니다.
                     </p>
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>AWS VPC, NLB 를 활용하여 은행권 서버와 전용망 구성</li>
-                        <li>AWS ALB 를 활용하여 로드밸런싱 구축</li>
-                        <li>Frontend, Backend 개발 및 운영</li>
-                        <li>Docker를 이용하여 배포 환경 구축</li>
+                        <li>AWS Site to Site VPN 을 활용하여 은행권 서버와 전용망 구성</li>
+                        <li>고정 IP 요구사항을 위해 NLB, NAT Gateway 기반 네트워크 아키텍처 설계</li>
+                        <li>웰컴저축은행 API 연동 및 데이터 통신 규격 정의</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> AWS - VPC, EC2, NLB, ALB, Next.js, MongoDB, Docker</p>
-                </div>
-
-                <div class="project">
-                    <h4>LGU+ 셀프 개통<span class="period-mark">.</span></h4>
-                    <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 셀프개통은 고객이 직접 유심을 통해 휴대폰을 개통할 수 있는 서비스입니다.
-                        기존의 레거시 셀프개통은 성공률이 10%에 불과하였으며 오개통이 되는 등 여러가지 문제가 있었습니다.
-                        이 문제를 빠르게 해결하기 위해 생산성 높은 기술 위주로 시스템을 설계하여 신규 셀프 개통 서비스를 개발하였습니다.
-                    </p>
-                    <h5>What I Did<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>Frontend, Backend 개발</li>
-                        <li>Docker를 이용하여 배포 환경 구축</li>
-                        <li>AWS ALB를 활용한 로드밸런싱</li>
-                        <li>Net Gateway를 활용하여 로드벨런서에 outbound IP 설정</li>
-                        <li>
-                            FastAPI 사용 시 발생하는 request blocking 문제를 AWS Lambda를 활용한 병렬 처리를 통해 해결
-                        </li>
-                        <li>Redis를 활용하여 분산 시스템 간의 데이터 공유</li>
-                    </ul>
-                    <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p>AWS - ALB, VPC, EC2, TypeScript, Next.js, TailwindCSS, FastAPI, Docker, Redis</p>
-                </div>
-
-                <div class="project">
-                    <h4>스마텔 관리자 페이지<span class="period-mark">.</span></h4>
-                    <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 스마텔 직원들이 서비스를 관리할 수 있는 백오피스 서비스를 개발하였습니다.
-                        홈페이지 관리, 요금제 등록/수정, 고객 관리 등 다양한 기능이 있습니다.
-                    </p>
-                    <h5>What I Did<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>Next.js를 사용하여 Frontend, Backend 개발</li>
-                        <li>Vercel을 활용한 CI/CD</li>
-                    </ul>
-                    <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> TypeScript, Next.js, MongoDB, Redis</p>
+                    <p> AWS VPC, ALB</p>
                 </div>
             </div>
         </div>
