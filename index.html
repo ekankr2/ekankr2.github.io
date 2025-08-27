@@ -20,10 +20,10 @@
             <br>
             저는 임익환입니다<span class="period-mark">.</span>
         </h1>
-        <p class="big-paragraph"> 3년 차 웹 엔지니어입니다.<br>
-            TypeScript, Python, MongoDB, Nginx, AWS 등의 기술로 시스템을 설계, 개발, 운영한 경험이 있습니다.<br/>
+        <p class="big-paragraph"> 4년 차 웹 엔지니어입니다.<br>
+            TypeScript, Nodejs, Python, AWS 등의 기술로 시스템을 설계, 개발, 운영한 경험이 있습니다.<br/>
             레거시에서 신규 시스템으로 전환, 클라우드 환경(AWS)으로 마이그레이션 등 다양한 경험을 가지고 있습니다.<br/>
-            완벽하지 않더라도 우선 완성하는 것을 중요하게 생각합니다.
+            완벽보다 완성하는 것을 추구합니다.<br/>
             비효율적인 업무 프로세스를 개선하는 것을 좋아하며, 체계가 부족해도 주도적으로 체계를 만들어가며 업무를 진행할 수 있습니다.
         </p>
     </section>
@@ -34,9 +34,9 @@
             <ul>
                 <li><strong>GitHub</strong> <a href="https://github.com/ekankr2" target="_blank">https://github.com/ekankr2</a>
                 </li>
-                <li><strong>Blog</strong> <a href="https://blog.naver.com/ekankr2" target="_blank">https://blog.naver.com/ekankr2</a>
+                <li><strong>Blog</strong> <a href="https://ekan.kr" target="_blank">https://ekan.kr</a>
                 </li>
-                <li><strong>Email</strong> <a href="mailto:ekankr2@naver.com">ekankr2@naver.com</a></li>
+                <li><strong>Email</strong> <a href="mailto:ekankr2@gmail.com">ekankr2@gmail.com</a></li>
                 <li><strong>Phone</strong> <a href="tel:010-7276-7477">010-7276-7477</a></li>
             </ul>
         </div>
@@ -55,8 +55,8 @@
                 <div class="project">
                     <h4>Overall<span class="period-mark">.</span></h4>
                     <p>
-                        MVNO 통신사인 스마텔에서 프론트, 백엔드, 클라우드 등 다양한 업무를 수행하고 있습니다.
-                        회사에 합류했을 때, 모든 서비스가 외주를 통해 개발되어 소스 및 버전 관리가 제대로 이루어지지 않는 상황이었습니다.
+                        MVNO 통신사인 스마텔에서 풀스택 개발 및 클라우드 인프라 구축 업무를 담당하고 있습니다.
+                        레거시 시스템을 현대적인 아키텍처로 전환하고, 개발 및 배포 프로세스를 자동화하여 팀의 생산성 향상에 기여하고 있습니다.
                         제가 근무하는 동안 바닥부터 점진적으로 체계를 구축하고 문제점을 개선해 나가는 데 집중하고 있습니다.
                     </p>
                 </div>
@@ -64,44 +64,50 @@
                 <div class="project">
                     <h4>아키텍처 진화 및 규제 대응<span class="period-mark">.</span></h4>
 
-                    <h5>Phase 1: 생산성 중심 기술 스택 전환<span class="period-mark">.</span></h5>
+                    <h5>Phase 0: 입사<span class="period-mark">.</span></h5>
                     <p>
-                        초기 React + Spring Boot + MySQL 조합은 잦은 요구사항 변경과 빠른 개발 요구에 적합하지 않았습니다.
-                        운영진의 신속한 의사결정에 대응하기 위해 Next.js, FastAPI 등
+                        입사 당시 모든 서비스가 서로 다른 외주업체에서 개발되어, 버전관리 및 데이터 공유가 제한적인 상황이었습니다.
+                        이를 해결하기 위해 React + Spring Boot + MySQL 기반의 통합 플랫폼 개발을 시작했습니다.
+                    </p>
+
+                    <h5>Phase 1: 생산성 이슈<span class="period-mark">.</span></h5>
+                    <p>
+                        React + Spring Boot + MySQL 조합은 운영진의 잦은 요구사항 변경과 빠른 개발 요구에 적합하지 않았습니다.
+                        신속한 의사결정에 대응하기 위해 Next.js, FastAPI, MongoDB 등
                         생산성이 높은 기술 스택으로 전환했습니다.
                     </p>
 
-                    <h5>Phase 2: 성능 문제 해결을 위한 서버리스 도입<span class="period-mark">.</span></h5>
+                    <h5>Phase 2: 서버 이슈<span class="period-mark">.</span></h5>
                     <p>
                         FastAPI에서 응답 시간이 긴 외부 API 호출 시 블로킹 현상이 발생했습니다.
-                        프로세스 수를 늘려도 개선되지 않아, Vercel 서버리스 함수의 Lambda 기반 병렬처리를 도입했습니다.
-                        이 과정에서 스키마 유연성을 위해 MongoDB를 도입했으며, 동시에 Nginx 기반 프록시 서버를 구축하여
+                        프로세스 수를 늘려도 개선되지 않아, 서버를 Vercel로 전환하여 서버리스 기반 병렬처리를 구성했습니다.
+                        PostgreSQL로 전환하여 안정성을 확보하고, Nginx 프록시 서버를 구축하여
                         서버리스 환경에서도 고정 IP를 확보했습니다.
                     </p>
 
-                    <h5>Phase 3: ISMS 인증 대응을 위한 내부망 구성<span class="period-mark">.</span></h5>
+                    <h5>Phase 3: 클라우드 서버 전환 및 ISMS 인증 대응<span class="period-mark">.</span></h5>
                     <p>
-                        ISMS 정보보안 관리체계 인증 요구사항에 따라 모든 서비스를 내부망에 구성해야 했습니다.
-                        서버리스 환경으로는 불가능한 요구사항이어서, AWS VPC 기반 전용 인프라로 전환하고
+                        서버리스 환경에서 PostgreSQL과의 커넥션 풀 문제가 지속적으로 발생했습니다.
+                        동시에 ISMS 인증 요구사항에 따라 모든 서비스를 내부망에 구성해야 했습니다.
+                        이를 해결하기 위해 AWS VPC 기반 전용 인프라로 전환하고
                         ECS를 도입하여 컨테이너 기반 배포 환경을 구축했습니다.
                         또한 Zone 분리 보안 원칙에 따라 기존 데이터베이스 RDS Aurora 로 이관하고, 별도 서브넷으로 분리하여 보안성을 강화했습니다.
-                        이 과정에서 기존 Vercel 코드의 재사용성을 고려하여 Node.js Fastify를 도입했습니다.
+                        이 과정에서 기존 Nextjs 코드 재사용을 위해 Node.js, Fastify를 도입했습니다.
+                        결과적으로 ISMS 인증을 통과하였습니다.
                     </p>
 
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>요구사항 변화에 따른 기술 스택 전환 전략 수립 및 실행</li>
-                        <li>성능 병목 지점 분석 및 서버리스 기반 해결책 도출</li>
-                        <li>고정 IP 요구사항을 위한 Nginx 프록시 서버 아키텍처 설계</li>
-                        <li>ISMS 인증 요구사항 분석 및 보안 정책 준수를 위한 내부망 설계</li>
-                        <li>AWS VPC, ECS 기반 컨테이너 인프라 구축</li>
-                        <li>데이터베이스 진화: MySQL → MongoDB → Aurora Postgres</li>
-                        <li>인프라 분리: Zone 분리 원칙에 따른 데이터베이스 독립 구성</li>
-                        <li>각 단계별 무중단 전환을 위한 점진적 마이그레이션 전략 수립</li>
+                        <li>요구사항 변화에 따른 기술 스택 전환</li>
+                        <li>ISMS 보안 정책 준수를 위한 시스템 설계</li>
+                        <li>ELB, ECS Fargate 기반 컨테이너 인프라 구축</li>
+                        <li>데이터베이스 이관: Oracle → MySQL → MongoDB → PostgreSQL → Aurora Postgres</li>
+                        <li>Zone 분리 원칙에 따른 서버 및 DB 서브넷 구성</li>
                     </ul>
 
-                    <h5>Tech Stack Evolution<span class="period-mark">.</span></h5>
-                    <p>React + Spring Boot + MySQL → Next.js + FastAPI → Vercel + MongoDB → Node.js Fastify + ECS + Aurora</p>
+                    <h5>Tech Stack<span class="period-mark">.</span></h5>
+                    <p>React + Spring Boot + MySQL → Next.js + FastAPI + MongoDB → Vercel + PostgreSQL → Node.js Fastify + ECS +
+                        Aurora</p>
                 </div>
 
                 <div class="project">
@@ -186,23 +192,16 @@
                     </p>
                     <h5>What I Did as Frontend<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>생산성 향상을 위해 기존 Redux State를 <a href="https://blog.naver.com/ekankr2/222660470026"
-                                                          target="_blank">React-query로
-                            변경</a>
-                        </li>
-                        <li><a href="https://blog.naver.com/ekankr2/222674738339" target="_blank">Zustand를 도입</a>하여 남아있는
-                            Redux boilerplate 제거
-                        </li>
-                        <li>TailwindCSS를 도입하여 리액트의 CSS 복잡성 문제 해결</li>
+                        <li>생산성을 위해 Redux 를 React-query + Zustand 로 전환</li>
+                        <li>TailwindCSS를 도입하여 CSS 파일 파편화 문제 해결</li>
                     </ul>
 
                     <h5>What I Did as Backend<span class="period-mark">.</span></h5>
                     <ul>
                         <li>FastAPI를 활용하여 백엔드 개발</li>
-                        <li><a href="https://blog.naver.com/ekankr2/222935224141" target="_blank">Docker를 도입한
-                            배포 환경</a> 구성
+                        <li>Docker를 도입하여 일관된 배포 환경 구성
                         </li>
-                        <li>Nginx와 Certbot을 활용한 리버스 프록시 환경 구성 및 HTTPS 인증서 발급 자동화</li>
+                        <li>Nginx를 활용한 리버스 프록시 환경 구성 및 HTTPS 적용</li>
                     </ul>
 
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
@@ -219,8 +218,8 @@
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
                         <li>프론트엔드 개발</li>
-                        <li>JS 프로젝트에 TS를 도입하여 유지 보수성 향상</li>
-                        <li>React 프로젝트에 Next.js를 도입하여 SSR 구성</li>
+                        <li>TypeScript 를 도입하여 유지 보수성 향상</li>
+                        <li>Next.js을 도입한 SSR 구성, SEO 향상</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
                     <p> TypeScript, React, Next.js</p>
@@ -229,26 +228,22 @@
                 <div class="project">
                     <h4>Visual Printing<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 환자의 장기 모델을 웹에서 볼 수 있는 서비스인 Visual Printing의 프론트엔드와 백엔드를 개발하였습니다.
-                        프론트엔드는 VanillaJS를 React로 변환하여 생산성을 향상시켰습니다.
-                        백엔드는 레거시 Node.js 서버를 리팩토링을 통해 유지보수성 및 확장성을 향상시켰습니다.
-                        현재는 일부 병원 내부에서 사용되고 있어 따로 외부에 공개된 페이지는 없습니다.
-                        Three.js 부분에 대한 간단한 예시는 <a href="https://github.com/ekankr2/threejs-STL-example"
-                                                   target="_blank">오픈소스로</a>
-                        만들어 보았습니다.
+                    <p> 환자의 장기 모델을 웹에서 볼 수 있는 서비스인 Visual Printing을 개발하였습니다.
+                        신규기술 도입 및 리팩토링을 통해 생산성을 향상시켰습니다.
+                        일부 병원 내부에서 사용되었으나 상용화는 되지 못했습니다.
                     </p>
                     <h5>What I Did as Frontend<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>생산성 향상을 위해 Vanilla JS를 React로 교체</li>
+                        <li>생산성 향상을 위해 Vanilla JS를 React로 전환</li>
                         <li>React Three Fiber를 활용하여 Three.js 코드 가독성 향상</li>
-                        <li>30초가 걸리던 초기 렌더링 속도를 1초 미만으로 단축</li>
-                        <li>URL만으로 다른 사용자의 정보를 진입할 수 있던 문제 해결</li>
+                        <li>60초가 걸리던 초기 렌더링 속도를 5초 미만으로 단축</li>
+                        <li>URL만으로 다른 사용자의 차트를 진입할 수 있던 문제 해결</li>
                     </ul>
                     <h5>What I Did as Backend<span class="period-mark">.</span></h5>
                     <ul>
                         <li>기능 확장이 불가능하던 레거시 프로젝트 모듈화 및 리팩토링</li>
-                        <li>TypeScript를 활용하여 OOP 방식으로 프로젝트 재구성</li>
-                        <li>세션 도입, 비밀번호 암호화 등 보안 강화</li>
+                        <li>TypeScript를 도입하여 유지보수성 향상</li>
+                        <li>세션, 비밀번호 암호화 등 보안 강화</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
                     <p> TypeScript, Node.js, Express.js, React, Three.js</p>
@@ -262,27 +257,25 @@
 
         <div class="row">
             <div class="row-left">
-                <h3>FastAPI Server<span class="period-mark">.</span></h3>
+                <h3>Three.js STL<span class="period-mark">.</span></h3>
                 <span class="role">Maintainer</span>
                 <span><time datetime="2022-12">2022. 12</time> - <time datetime="now"></time></span>
             </div>
             <div class="row-right">
                 <div class="project">
-                    <h4>FastAPI 기반의 REST API 서버<span class="period-mark">.</span></h4>
+                    <h4>Three.js 기반의 STL 파일 렌더링<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> FastAPI를 통해 REST API 서버를 구성하는 예시가 많이 없어서 직접 학습도 하며
-                        다른 사람들에게도 도움이 되고자
-                        <a href="https://github.com/ekankr2/fastapi-server" target="_blank">fastapi-server</a> 를 만들었습니다.
+                    <p> STL 파일을 웹에 렌더링하는 예시가 많이 없어서
+                        <a href="https://github.com/ekankr2/threejs-STL-example" target="_blank">threejs-STL-example</a>
+                        를 만들었습니다.
                     </p>
                     <h5>What I Learned<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>FastAPI Utilities를 활용한 class 기반의 라우터 설계</li>
-                        <li>alembic을 활용한 DB 버전 관리 방법</li>
-                        <li>Pydantic을 활용한 데이터 유효성 검증 및 설정 관리</li>
-                        <li>Pytest를 활용한 테스트 코드 구성</li>
+                        <li>React 환경에서 three.js 사용 방법</li>
+                        <li>Three.js로 3D 파일 렌더링 하는 방법</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p>Python, FastAPI, PostgreSQL, Docker</p>
+                    <p>React, Three.js</p>
                 </div>
             </div>
         </div>
@@ -295,8 +288,7 @@
             <h3>Blog<span class="period-mark">.</span></h3>
             <span class="role">Author, Maintainer</span> <span class="time"><time datetime="2016-09">2021. 05.</time> - 현재</span>
             <p>
-                제가 새롭게 배운 내용이나 해결했던 문제들을 <a href="https://blog.naver.com/ekankr2" target="_blank">개인 블로그</a>에 공유하여 다른
-                사람들에게 도움이 되고자 하고 있습니다.<br>
+                제가 새롭게 배운 내용이나 해결했던 문제들을 <a href="https://ekan.kr" target="_blank">개인 블로그</a>에 기록하고 있습니다.<br>
             </p>
         </div>
     </section>
@@ -306,10 +298,10 @@
         <div class="other">
             <h3>Overall<span class="period-mark">.</span></h3>
             <ul>
-                <li> 유지 보수성 및 확장성이 뛰어난 코드가 가치있는 코드라고 생각합니다.</li>
                 <li> 업무에 필요하다면 능숙한 분야가 아니더라도 적극적으로 탐색하여 최적의 결과를 낼 수 있도록 노력합니다.</li>
                 <li> 문제에 직면하면 스스로 탐구하고 해결하기 위해 노력합니다.</li>
                 <li> 비효율적인 프로세스를 개선하여 생산성을 향상시키는 것을 좋아합니다.</li>
+                <li> ISMS 인증을 통과한 시스템을 구축한 경험이 있습니다.</li>
             </ul>
         </div>
 
@@ -317,48 +309,36 @@
             <h3>Communication<span class="period-mark">.</span></h3>
             <ul>
                 <li> 영어에 능숙하여 공식 문서나 자료를 영어로 찾아보는 편입니다.</li>
-                <li> 팀원 간의 커뮤니케이션은 적은 것보다는 많은게 좋다고 믿습니다.</li>
+                <li> 팀원 간의 커뮤니케이션은 적은 것보다는 많은게 좋다고 생각합니다.</li>
             </ul>
         </div>
 
         <div class="other">
-            <h3>FastAPI<span class="period-mark">.</span></h3>
+            <h3>Next.js<span class="period-mark">.</span></h3>
             <ul>
-                <li>SQLAlchemy와 Alembic을 활용하여 DB를 제어하고 버전관리를 합니다.</li>
-                <li>Pydantic을 활용하여 데이터 유효성 검사를 합니다.</li>
-                <li>Pytest를 활용하여 테스트 코드를 작성합니다.</li>
-            </ul>
-        </div>
-
-        <div class="other">
-            <h3>Next.js, React<span class="period-mark">.</span></h3>
-            <ul>
-                <li>상황에 따라 서버와 클라이언트 컴포넌트를 적절히 활용합니다.</li>
                 <li>타입스크립트 환경에 익숙합니다.</li>
+                <li>상황에 따라 서버와 클라이언트 컴포넌트를 적절히 활용합니다.</li>
                 <li>합리적인 방식으로 컴포넌트를 분리하여 재사용성을 높입니다.</li>
-                <li>클라이언트 캐싱을 적절히 활용하여 DB 접근 횟수를 줄입니다.</li>
-                <li>React 사용 시 React-query와 Zustand 조합을 사용하여 상태를 관리합니다.</li>
+                <li>클라이언트 캐싱을 적절히 활용하여 서버 접근을 줄입니다.</li>
             </ul>
         </div>
 
         <div class="other">
-            <h3>Node Express<span class="period-mark">.</span></h3>
+            <h3>NodeJS Fastify<span class="period-mark">.</span></h3>
             <ul>
-                <li>타입스크립트를 활용한 OOP 구조로 프로젝트를 구성합니다.</li>
-                <li>미들웨어 사용에 익숙합니다.</li>
-                <li>TypeORM을 활용하여 DB를 제어합니다.</li>
-                <li>Swagger를 구성하여 api 시각화를 할 수 있습니다.</li>
-                <li>Jest를 활용하여 테스트 코드를 작성합니다.</li>
+                <li>타입스크립트를 활용하여 프로젝트를 구성합니다.</li>
+                <li>플러그인 사용에 익숙합니다.</li>
+                <li>drizzleORM 을 활용하여 DB를 제어합니다.</li>
             </ul>
         </div>
 
         <div class="other">
             <h3>DevOps<span class="period-mark">.</span></h3>
             <ul>
-                <li>Docker를 활용하여 Node.js, Python, Nginx 등의 배포 환경을 구성한 경험이 있습니다.</li>
-                <li>Nginx을 활용해 Reverse Proxy를 구성하고 HTTPS 인증을 자동화 한 경험이 있습니다.</li>
-                <li>AWS VPC를 직접 구성하고 VPN을 이용한 전용망을 구성한 경험이 있습니다.</li>
-                <li>AWS ALB를 이용하여 로드밸런싱을 구성한 경험이 있습니다.</li>
+                <li>서버 구성에 ECS Fargate를 선호하는 편입니다.</li>
+                <li>Github Actions, CodePipeline 등으로 CI/CD를 구성합니다.</li>
+                <li>AWS VPC를 직접 구성하고 전용망을 구축한 경험이 있습니다.</li>
+                <li>AWS ALB, NLB로 로드밸런싱을 구축한 경험이 있습니다.</li>
             </ul>
         </div>
     </section>
