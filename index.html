@@ -22,9 +22,8 @@
         </h1>
         <p class="big-paragraph"> 4년 차 웹 엔지니어입니다.<br>
             TypeScript, Nodejs, Python, AWS 등의 기술로 시스템을 설계, 개발, 운영한 경험이 있습니다.<br/>
-            레거시에서 신규 시스템으로 전환, 클라우드 환경(AWS)으로 마이그레이션 등 다양한 경험을 가지고 있습니다.<br/>
-            완벽보다 완성하는 것을 추구합니다.<br/>
-            비효율적인 업무 프로세스를 개선하는 것을 좋아하며, 체계가 부족해도 주도적으로 체계를 만들어가며 업무를 진행할 수 있습니다.
+            레거시에서 신규 시스템으로 전환, 클라우드 환경으로 마이그레이션 등 다양한 경험을 가지고 있습니다.<br/>
+            빠르게 구현하고 지속적으로 개선하는 접근법으로 비즈니스 가치를 실현합니다.
         </p>
     </section>
 
@@ -55,110 +54,91 @@
                 <div class="project">
                     <h4>Overall<span class="period-mark">.</span></h4>
                     <p>
-                        MVNO 통신사인 스마텔에서 풀스택 개발 및 클라우드 인프라 구축 업무를 담당하고 있습니다.
-                        레거시 시스템을 현대적인 아키텍처로 전환하고, 개발 및 배포 프로세스를 자동화하여 팀의 생산성 향상에 기여하고 있습니다.
+                        MVNO 통신사 스마텔에서 풀스택 개발 및 클라우드 인프라 구축 업무를 담당하고 있습니다.
+                        레거시 시스템을 현대적인 아키텍처로 전환하고, 개발 프로세스를 자동화하여 팀의 생산성 향상에 기여하고 있습니다.
                         제가 근무하는 동안 바닥부터 점진적으로 체계를 구축하고 문제점을 개선해 나가는 데 집중하고 있습니다.
                     </p>
                 </div>
 
                 <div class="project">
-                    <h4>아키텍처 진화 및 규제 대응<span class="period-mark">.</span></h4>
+                    <h4>핵심 Issue 해결 경험<span class="period-mark">.</span></h4>
 
-                    <h5>Phase 0: 입사<span class="period-mark">.</span></h5>
+                    <h5>1. 외주 의존적 시스템, 급변하는 운영진 요구<span class="period-mark">.</span></h5>
                     <p>
-                        입사 당시 모든 서비스가 서로 다른 외주업체에서 개발되어, 버전관리 및 데이터 공유가 제한적인 상황이었습니다.
-                        이를 해결하기 위해 React + Spring Boot + MySQL 기반의 통합 플랫폼 개발을 시작했습니다.
+                        서로 다른 외주 의존적 시스템은 고객 문의나
+                        급변하는 통신업계 규제와 운영진의 요구에 신속히 대응하기 어려운 상황이었습니다.
+                        통합 플랫폼 구축과 생산성 높은 기술스택 도입으로 외주 비용 절감,
+                        신속한 고객 대응, 신규 기능 개발 속도를 모두 향상시켰습니다.
                     </p>
 
-                    <h5>Phase 1: 생산성 이슈<span class="period-mark">.</span></h5>
+                    <h5>2. 성능 개선으로 고객 경험 향상<span class="period-mark">.</span></h5>
                     <p>
-                        React + Spring Boot + MySQL 조합은 운영진의 잦은 요구사항 변경과 빠른 개발 요구에 적합하지 않았습니다.
-                        신속한 의사결정에 대응하기 위해 Next.js, FastAPI, MongoDB 등
-                        생산성이 높은 기술 스택으로 전환했습니다.
+                        외부 API 연동으로 인한 응답 지연, 블로킹 등의 문제를 서버리스 아키텍처와 캐싱 전략으로 해결했습니다.
+                        시스템 응답 시간을 크게 단축하여 고객 만족도와 서비스 신뢰도가 향상되었습니다.
                     </p>
 
-                    <h5>Phase 2: 서버 이슈<span class="period-mark">.</span></h5>
+                    <h5>3. 클라우드 서버 전환 및 ISMS 인증 대응<span class="period-mark">.</span></h5>
                     <p>
-                        FastAPI에서 응답 시간이 긴 외부 API 호출 시 블로킹 현상이 발생했습니다.
-                        프로세스 수를 늘려도 개선되지 않아, 서버를 Vercel로 전환하여 서버리스 기반 병렬처리를 구성했습니다.
-                        PostgreSQL로 전환하여 안정성을 확보하고, Nginx 프록시 서버를 구축하여
-                        서버리스 환경에서도 고정 IP를 확보했습니다.
-                    </p>
-
-                    <h5>Phase 3: 클라우드 서버 전환 및 ISMS 인증 대응<span class="period-mark">.</span></h5>
-                    <p>
-                        서버리스 환경에서 PostgreSQL과의 커넥션 풀 문제가 지속적으로 발생했습니다.
-                        동시에 ISMS 인증 요구사항에 따라 모든 서비스를 내부망에 구성해야 했습니다.
-                        이를 해결하기 위해 AWS VPC 기반 전용 인프라로 전환하고
-                        ECS를 도입하여 컨테이너 기반 배포 환경을 구축했습니다.
-                        또한 Zone 분리 보안 원칙에 따라 기존 데이터베이스 RDS Aurora 로 이관하고, 별도 서브넷으로 분리하여 보안성을 강화했습니다.
-                        이 과정에서 기존 Nextjs 코드 재사용을 위해 Node.js, Fastify를 도입했습니다.
-                        결과적으로 ISMS 인증을 통과하였습니다.
+                        MVNO 통신사 라이센스 유지를 위한 ISMS 보안 요구사항에 대응했습니다.
+                        단계적 마이그레이션으로 서비스 중단을 최소화하며 AWS 인프라 전환을 완료하고 ISMS 인증을 획득했습니다.
                     </p>
 
                     <h5>What I Did<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>요구사항 변화에 따른 기술 스택 전환</li>
-                        <li>ISMS 보안 정책 준수를 위한 시스템 설계</li>
-                        <li>ELB, ECS Fargate 기반 컨테이너 인프라 구축</li>
-                        <li>데이터베이스 이관: Oracle → MySQL → MongoDB → PostgreSQL → Aurora Postgres</li>
-                        <li>Zone 분리 원칙에 따른 서버 및 DB 서브넷 구성</li>
+                        <li>개발 주기 대폭 단축으로 비즈니스 가치 향상</li>
+                        <li>외주 의존도 감소로 비용 절감 및 내부 역량 확보</li>
+                        <li>시스템 성능 개선으로 고객 만족도 및 신뢰도 향상</li>
+                        <li>ISMS 인증 획득으로 규제 준수 및 신뢰성 확보</li>
                     </ul>
 
-                    <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p>React + Spring Boot + MySQL → Next.js + FastAPI + MongoDB → Vercel + PostgreSQL → Node.js Fastify + ECS +
-                        Aurora</p>
+                    <h5>기술적 여정<span class="period-mark">.</span></h5>
+                    <p>Oracle 레거시 → React+Spring Boot+EC2 → Next.js+FastAPI+Vercel 서버리스 → Node.js + AWS ECS</p>
                 </div>
 
                 <div class="project">
                     <h4>스마텔 통합 플랫폼<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
                     <p>
-                        외주업체별로 분산된 기존 시스템의 통합을 위해, 스마텔 비즈니스 프로세스를 담은 통합 플랫폼을 설계하고 개발했습니다.
-                        고객용 서비스(가입, 충전, 셀프개통)와 직원용 페이지를 포함한 시스템으로 구축하여, 현재 50만명의 고객 데이터 업무 처리를 하고 있습니다.
+                        외주업체별로 분산된 기존 시스템을 통합하여 스마텔 비즈니스 프로세스를 담은 통합 플랫폼을 설계하고 개발했습니다.
+                        고객용 서비스와 직원용 관리 시스템을 구축하여 현재 40만명의 고객 데이터를 처리하고 있습니다.
                     </p>
-                    <h5>Achievements<span class="period-mark">.</span></h5>
+                    <h5>Business Impact<span class="period-mark">.</span></h5>
                     <ul>
-                        <li><strong>SEO 최적화</strong> - 구글 검색 1페이지 진입</li>
-                        <li><strong>가입 프로세스 개선</strong> - 온라인을 통한 하루 1천명 가입 처리, 전자서명으로 명의도용 방지</li>
-                        <li><strong>셀프개통 개선</strong> - 기존 성공률 5%에서 대폭 향상, 오개통 문제 해결</li>
-                        <li><strong>운영 효율화</strong> - 직원용 페이지로 홈페이지, 요금제, 고객 관리 업무 자동화</li>
+                        <li><strong>마케팅 효과</strong> - SEO 최적화로 구글 검색 1페이지 진입 > 유입 증가</li>
+                        <li><strong>가입 효율화</strong> - 온라인 하루 1천명 가입 처리, 전자서명으로 명의도용 차단 하루 10 건 이상 > 0건</li>
+                        <li><strong>개통 성공률 향상</strong> - 기존 5% 미만 성공률을 95%까지 개선하여 개통 업무 자동화 및 매출 향상</li>
+                        <li><strong>운영 자동화</strong> - 상담 업무 효율성 향상 및 자동화를 통한 50% 비용 절감</li>
                     </ul>
-                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <h5>Key Contributions<span class="period-mark">.</span></h5>
                     <ul>
-                        <li><strong>풀스택 플랫폼 설계</strong> - 고객용 서비스와 관리자 백오피스를 포함한 통합 시스템 아키텍처 설계</li>
-                        <li><strong>Frontend 개발</strong> - Next.js SSR 기반 고객용 플랫폼 및 관리자 대시보드 구현</li>
-                        <li><strong>Backend 개발</strong> - 3사 통신사 API 통합, 20초 이상 소요되는 외부 API 안정적 처리</li>
-                        <li><strong>관리 시스템</strong> - 홈페이지 콘텐츠 관리, 요금제 등록/수정, 고객 관리 기능 개발</li>
-                        <li><strong>보안 시스템</strong> - 이니시스 전자서명 연동으로 명의도용 방지 및 신청자 일치 여부 검증</li>
-                        <li><strong>결제 시스템</strong> - 이니시스 결제 모듈 연동</li>
-                        <li><strong>성능 최적화</strong> - Redis를 활용한 캐싱 및 신청, 개통 속도 향상</li>
-                        <li><strong>인프라 구축</strong> - AWS ELB, VPC, ECS Fargate 등</li>
-                        <li><strong>DB 마이그레이션</strong> - Oracle DB > Postgresql</li>
-                        <li><strong>DevOps</strong> - Github Actions CI/CD, Codedeploy</li>
-                        <li><strong>문제 해결</strong> - 서비스 성장에 따라 EC2 → FastAPI → Vercel → ECS 전환 등
-                            지속적인 아키텍처 최적화를 통해 확장성과 안정성을 확보
-                        </li>
+                        <li>고객 및 관리자를 위한 통합 서비스 플랫폼 구축</li>
+                        <li>상위 통신사 연동 프로세스를 안정적으로 처리하는 시스템 설계</li>
+                        <li>보안과 사용성을 모두 확보한 온라인 가입 프로세스 구현</li>
+                        <li>빠른 서비스 변화에 대응할 수 있는 시스템</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p>AWS, TypeScript, Next.js, Node.js, PostgreSQL, Redis, Github Actions</p>
+                    <p>AWS, TypeScript, Next.js, Node.js, PostgreSQL, Redis</p>
                 </div>
 
                 <div class="project">
                     <h4>웰컴저축은행 가입 신청서<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 웰컴저축은행 앱에서 스마텔 요금제를 가입할 수 있는 페이지를 개발하였습니다.
-                        은행권 보안 정책에 따른 전용망 구성이 필요했으나,
-                        네트워크 인프라 설계를 통해 안전한 통신 환경을 성공적으로 구축했습니다.
+                    <p>
+                        웰컴저축은행 앱 내에서 스마텔 요금제 가입이 가능한 서비스를 개발하여 새로운 고객 유입 채널을 확보했습니다.
+                        은행권 보안 정책을 준수하면서도 원활한 서비스 연동을 달성했습니다.
                     </p>
-                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <h5>Business Impact<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>AWS Site to Site VPN 을 활용하여 은행권 서버와 전용망 구성</li>
-                        <li>고정 IP 요구사항을 위해 NLB, NAT Gateway 기반 네트워크 아키텍처 설계</li>
-                        <li>웰컴저축은행 API 연동 및 데이터 통신 규격 정의</li>
+                        <li>은행 고객층 대상 신규 가입 채널 확보</li>
+                        <li>안전한 서비스 연동으로 양사 고객 만족도 확보</li>
+                    </ul>
+                    <h5>Key Contributions<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>은행권 보안 요구사항을 만족하는 전용망 + VPN 구성</li>
+                        <li>양사 간 원활한 협업을 위한 API 연동 및 규격 정의</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p> AWS VPC, ALB</p>
+                    <p>AWS VPC, Site-to-Site VPN, NLB, NAT Gateway</p>
                 </div>
             </div>
         </div>
@@ -173,35 +153,25 @@
                 <div class="project">
                     <h4>Overall<span class="period-mark">.</span></h4>
                     <p>
-                        시리스 C 의료 스타트업에서 프론트엔드 및 백엔드를 개발 및 운영을 하였습니다.
-                        기존 레거시 프로젝트 개선 및 신규 개발을 하였으며,
-                        제가 개발에 기여한 TiSepX의 경우 의료기기 판매를 위한 식약처 인증까지 성공하였습니다.<br/>
+                        시리즈 C 의료 스타트업에서 AI 기반 의료진단 서비스 개발을 담당했습니다.
+                        레거시 시스템 개선과 신규 서비스 개발을 통해 제품 품질과 개발 효율성을 향상시켰으며,
+                        식약처 의료기기 인증 획득에 기여하여 상용화 기반을 마련했습니다.
                     </p>
                 </div>
 
                 <div class="project">
                     <h4>TiSepX<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 폐질환을 분석해주는 AI 서비스인
+                    <p> 폐질환을 분석하는 AI 서비스인
                         <a href="https://tisepx.com" target="_blank">TiSepX
                         </a>
-                        의 프론트엔드와 백엔드를 개발하였습니다.
-                        ML엔지니어와 협업하여 개발하였으며,
-                        HTTPS인증 등 식약처의 요구사항을 반영하여, 의료기기 판매를 위한
-                        식약처 인증에 성공하였습니다.
+                        의 풀스택 개발을 담당했습니다. ML엔지니어와의 협업하여 의료기기 인증 요구사항을 반영한 시스템을 구축했습니다.
                     </p>
-                    <h5>What I Did as Frontend<span class="period-mark">.</span></h5>
+                    <h5>Business Impact<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>생산성을 위해 Redux 를 React-query + Zustand 로 전환</li>
-                        <li>TailwindCSS를 도입하여 CSS 파일 파편화 문제 해결</li>
-                    </ul>
-
-                    <h5>What I Did as Backend<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>FastAPI를 활용하여 백엔드 개발</li>
-                        <li>Docker를 도입하여 일관된 배포 환경 구성
-                        </li>
-                        <li>Nginx를 활용한 리버스 프록시 환경 구성 및 HTTPS 적용</li>
+                        <li>식약처 의료기기 판매 인증 획득으로 상용화 기반 확보</li>
+                        <li>상태관리 라이브러리 전환으로 개발 생산성 향상</li>
+                        <li> HTTPS 및 보안 요구사항 충족으로 의료 데이터 안전성 확보</li>
                     </ul>
 
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
@@ -211,15 +181,13 @@
                 <div class="project">
                     <h4>Homepage<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 회사 소개를 위한 <a href="https://medicalip.com/" target="_blank">웹 페이지</a>를 개발하였습니다.<br/>
-                        기존의 홈페이지가 React 특성상 SEO가 부족하다고 판단되어,
-                        SSR을 도입하여 SEO 향상을 통해 방문자 수를 증가시켰습니다.
+                    <p> 회사 소개 <a href="https://medicalip.com/" target="_blank">웹 사이트</a>를
+                        개발하여 브랜드 인지도 향상에 기여했습니다. SEO 최적화를 통해 유입을 증가시켰습니다.
                     </p>
-                    <h5>What I Did<span class="period-mark">.</span></h5>
+                    <h5>Business Impact<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>프론트엔드 개발</li>
-                        <li>TypeScript 를 도입하여 유지 보수성 향상</li>
-                        <li>Next.js을 도입한 SSR 구성, SEO 향상</li>
+                        <li>SEO 최적화로 검색 엔진 노출도 향상 및 방문자 증가</li>
+                        <li>TypeScript 도입으로 코드 안정성 및 개발 효율성 확보</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
                     <p> TypeScript, React, Next.js</p>
@@ -228,27 +196,67 @@
                 <div class="project">
                     <h4>Visual Printing<span class="period-mark">.</span></h4>
                     <h5>Description<span class="period-mark">.</span></h5>
-                    <p> 환자의 장기 모델을 웹에서 볼 수 있는 서비스인 Visual Printing을 개발하였습니다.
-                        신규기술 도입 및 리팩토링을 통해 생산성을 향상시켰습니다.
-                        일부 병원 내부에서 사용되었으나 상용화는 되지 못했습니다.
+                    <p> 환자의 3D 장기 모델을 웹에서 시각화하는 서비스를 개발했습니다.
                     </p>
-                    <h5>What I Did as Frontend<span class="period-mark">.</span></h5>
+                    <h5>Business Impact<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>생산성 향상을 위해 Vanilla JS를 React로 전환</li>
-                        <li>React Three Fiber를 활용하여 Three.js 코드 가독성 향상</li>
-                        <li>60초가 걸리던 초기 렌더링 속도를 5초 미만으로 단축</li>
-                        <li>URL만으로 다른 사용자의 차트를 진입할 수 있던 문제 해결</li>
-                    </ul>
-                    <h5>What I Did as Backend<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>기능 확장이 불가능하던 레거시 프로젝트 모듈화 및 리팩토링</li>
-                        <li>TypeScript를 도입하여 유지보수성 향상</li>
-                        <li>세션, 비밀번호 암호화 등 보안 강화</li>
+                        <li>렌더링 시간을 60초에서 5초로 단축하여 사용성 크게 개선</li>
+                        <li>3D 렌더링 성능 최적화로 사용자 경험 혁신</li>
+                        <li>접근 권한 문제 해결로 환자 데이터 보안 확보</li>
                     </ul>
                     <h5>Tech Stack<span class="period-mark">.</span></h5>
                     <p> TypeScript, Node.js, Express.js, React, Three.js</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skills<span class="period-mark">.</span></h2>
+        <div class="other">
+            <h3>Overall<span class="period-mark">.</span></h3>
+            <ul>
+                <li> 업무에 필요하다면 능숙한 분야가 아니더라도 적극적으로 탐색하여 최적의 결과를 낼 수 있도록 노력합니다.</li>
+                <li> 문제에 직면하면 스스로 탐구하고 해결하기 위해 노력합니다.</li>
+                <li> 비효율적인 프로세스를 개선하여 생산성을 향상시키는 것을 좋아합니다.</li>
+            </ul>
+        </div>
+
+        <div class="other">
+            <h3>Communication<span class="period-mark">.</span></h3>
+            <ul>
+                <li> 영어에 능숙하여 공식 문서나 자료를 영어로 찾아보는 편입니다.</li>
+                <li> 팀원 간의 커뮤니케이션은 적은 것보다는 많은 게 좋다고 생각합니다.</li>
+            </ul>
+        </div>
+
+        <div class="other">
+            <h3>DevOps<span class="period-mark">.</span></h3>
+            <ul>
+                <li>서버 구성에 ECS Fargate를 선호하는 편입니다.</li>
+                <li>Github Actions, CodePipeline 등으로 CI/CD를 구성합니다.</li>
+                <li>AWS VPC를 직접 구성하고 전용망을 구축한 경험이 있습니다.</li>
+                <li>AWS ALB, NLB 기반 고가용성 인프라 및 네트워크 아키텍처 설계 경험이 있습니다.</li>
+            </ul>
+        </div>
+
+        <div class="other">
+            <h3>Next.js<span class="period-mark">.</span></h3>
+            <ul>
+                <li>타입스크립트 환경에 익숙합니다.</li>
+                <li>상황에 따라 서버와 클라이언트 컴포넌트를 적절히 활용합니다.</li>
+                <li>합리적인 방식으로 컴포넌트를 분리하여 재사용성을 높입니다.</li>
+                <li>클라이언트 캐싱을 적절히 활용하여 서버 접근을 줄입니다.</li>
+            </ul>
+        </div>
+
+        <div class="other">
+            <h3>NodeJS<span class="period-mark">.</span></h3>
+            <ul>
+                <li>타입스크립트를 활용하여 프로젝트를 구성합니다.</li>
+                <li>Fastify 사용에 익숙합니다.</li>
+                <li>drizzleORM 을 활용하여 DB를 제어합니다.</li>
+            </ul>
         </div>
     </section>
 
@@ -281,69 +289,16 @@
         </div>
     </section>
 
-
     <section>
         <h2>Activity<span class="period-mark">.</span></h2>
         <div class="other">
             <h3>Blog<span class="period-mark">.</span></h3>
-            <span class="role">Author, Maintainer</span> <span class="time"><time datetime="2016-09">2021. 05.</time> - 현재</span>
+            <span class="role">Author, Maintainer</span> <span class="time"> - 현재</span>
             <p>
                 제가 새롭게 배운 내용이나 해결했던 문제들을 <a href="https://ekan.kr" target="_blank">개인 블로그</a>에 기록하고 있습니다.<br>
             </p>
         </div>
     </section>
-
-    <section>
-        <h2>Skills<span class="period-mark">.</span></h2>
-        <div class="other">
-            <h3>Overall<span class="period-mark">.</span></h3>
-            <ul>
-                <li> 업무에 필요하다면 능숙한 분야가 아니더라도 적극적으로 탐색하여 최적의 결과를 낼 수 있도록 노력합니다.</li>
-                <li> 문제에 직면하면 스스로 탐구하고 해결하기 위해 노력합니다.</li>
-                <li> 비효율적인 프로세스를 개선하여 생산성을 향상시키는 것을 좋아합니다.</li>
-                <li> ISMS 인증을 통과한 시스템을 구축한 경험이 있습니다.</li>
-            </ul>
-        </div>
-
-        <div class="other">
-            <h3>Communication<span class="period-mark">.</span></h3>
-            <ul>
-                <li> 영어에 능숙하여 공식 문서나 자료를 영어로 찾아보는 편입니다.</li>
-                <li> 팀원 간의 커뮤니케이션은 적은 것보다는 많은게 좋다고 생각합니다.</li>
-            </ul>
-        </div>
-
-        <div class="other">
-            <h3>Next.js<span class="period-mark">.</span></h3>
-            <ul>
-                <li>타입스크립트 환경에 익숙합니다.</li>
-                <li>상황에 따라 서버와 클라이언트 컴포넌트를 적절히 활용합니다.</li>
-                <li>합리적인 방식으로 컴포넌트를 분리하여 재사용성을 높입니다.</li>
-                <li>클라이언트 캐싱을 적절히 활용하여 서버 접근을 줄입니다.</li>
-            </ul>
-        </div>
-
-        <div class="other">
-            <h3>NodeJS Fastify<span class="period-mark">.</span></h3>
-            <ul>
-                <li>타입스크립트를 활용하여 프로젝트를 구성합니다.</li>
-                <li>플러그인 사용에 익숙합니다.</li>
-                <li>drizzleORM 을 활용하여 DB를 제어합니다.</li>
-            </ul>
-        </div>
-
-        <div class="other">
-            <h3>DevOps<span class="period-mark">.</span></h3>
-            <ul>
-                <li>서버 구성에 ECS Fargate를 선호하는 편입니다.</li>
-                <li>Github Actions, CodePipeline 등으로 CI/CD를 구성합니다.</li>
-                <li>AWS VPC를 직접 구성하고 전용망을 구축한 경험이 있습니다.</li>
-                <li>AWS ALB, NLB로 로드밸런싱을 구축한 경험이 있습니다.</li>
-            </ul>
-        </div>
-    </section>
-
-
 </div>
 </body>
 </html>
