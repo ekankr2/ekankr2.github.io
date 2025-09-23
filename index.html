@@ -94,12 +94,35 @@
                         <li><strong>보안 :</strong> 스팸 광고, 랜섬웨어 해결 및 방지</li>
                         <li><strong>팀 역량 :</strong> 내부 개발팀 기술 스택 현대화 및 자체 개발 역량 확보</li>
                     </ul>
+                </div>
 
-                    <h5>2. 성능 개선으로 고객 경험 향상<span class="period-mark">.</span></h5>
-                    <p>
-                        외부 API 연동으로 인한 응답 지연, 실패율 등의 문제를 서버리스 아키텍처와 캐싱 전략으로 해결했습니다.
-                        시스템 안정성을 크게 향상시켜 고객 만족도와 서비스 신뢰도가 개선되었습니다.
-                    </p>
+                <div class="project">
+                    <h4>개통 시스템 개선<span class="period-mark">.</span></h4>
+                    <h5>문제점 및 배경<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>셀프개통 성공률이 하루 5% 미만</li>
+                        <li>요금 프로모션 진행 시 개통, CS 업무 마비 → 고객 이탈로 연결</li>
+                    </ul>
+                    <h5>원인 분석<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>잘못 개발된 기존 개통 시스템으로 인한 오개통</li>
+                        <li>오류 발생 기록이 없어 상담 불가능</li>
+                        <li>응답시간이 긴 통신사 api에서 블로킹 발생</li>
+                    </ul>
+                    <h5>해결 과정<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li><strong>1 : </strong>상위 통신사와 협업하여 개통 시스템 재개발</li>
+                        <li><strong>2 : </strong>서버리스 아키텍처(Lambda) 와 캐싱(Redis)을 도입하여 블로킹 문제 해결</li>
+                        <li><strong>3 : </strong>개통 시도 내역을 기록하여 상담 업무 개선</li>
+                        <li><strong>4 : </strong>개통 직원들을 위한 페이지를 구축하여 개통 업무 자동화 </li>
+                    </ul>
+                    <h5>결과<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li><strong>생산성 :</strong> 신규 기능 개발 주기 1달 이상 → 1주 이내로 단축</li>
+                        <li><strong>경제성 :</strong> 외주 비용 100% 절감, SEO 개선으로 방문자 증가 (하루 1000→10만명)</li>
+                        <li><strong>보안 :</strong> 스팸 광고, 랜섬웨어 해결 및 방지</li>
+                        <li><strong>팀 역량 :</strong> 내부 개발팀 기술 스택 현대화 및 자체 개발 역량 확보</li>
+                    </ul>
 
                     <h5>3. 클라우드 서버 전환 및 ISMS 인증 대응<span class="period-mark">.</span></h5>
                     <p>
