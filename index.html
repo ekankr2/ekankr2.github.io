@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="project">
-                    <h4>레거시 시스템 재개발<span class="period-mark">.</span></h4>
+                    <h4>통합 시스템 재개발<span class="period-mark">.</span></h4>
                     <h5>문제점 및 배경<span class="period-mark">.</span></h5>
                     <ul>
                         <li>외주로 이루어진 기존 시스템은 신규 개발, 긴급 대응 속도가 느림</li>
@@ -100,92 +100,109 @@
                     <h4>개통 시스템 개선<span class="period-mark">.</span></h4>
                     <h5>문제점 및 배경<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>셀프개통 성공률이 하루 5% 미만</li>
+                        <li>상위 통신사 개통 API 연동 시 성공률이 5% 미만으로 매우 낮음</li>
                         <li>요금 프로모션 진행 시 개통, CS 업무 마비 → 고객 이탈로 연결</li>
                     </ul>
                     <h5>원인 분석<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>잘못 개발된 기존 개통 시스템으로 인한 오개통</li>
-                        <li>오류 발생 기록이 없어 상담 불가능</li>
-                        <li>응답시간이 긴 통신사 api에서 블로킹 발생</li>
+                        <li>응답시간이 긴 통신사 API를 FastAPI 서버에서 호출 시 블로킹 발생</li>
+                        <li>잘못 개발된 개통 프로세스, 에러 처리 및 자동 재시도 로직 부재</li>
+                        <li>자동화된 개통 시스템의 부재 (직원 1인당 1시간 1건 개통이 한계)</li>
+                        <li>개통 진행 기록이 없어 상담 불가능</li>
+                    </ul>
+                    <h5>해결책 수립<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>비동기 처리로 또는 동시성 처리로 블로킹 문제 해결 필요</li>
+                        <li>외부 API 중복 호출, DB Insert 최소화 필요</li>
+                        <li>상담을 위한 개통 진행상황 저장 및 모니터링 시스템 구축</li>
+                        <li>개통 직원들을 위한 개통 자동화 시스템 필요</li>
                     </ul>
                     <h5>해결 과정<span class="period-mark">.</span></h5>
                     <ul>
-                        <li><strong>1 : </strong>상위 통신사와 협업하여 개통 시스템 재개발</li>
-                        <li><strong>2 : </strong>서버리스 아키텍처(Lambda) 와 캐싱(Redis)을 도입하여 블로킹 문제 해결</li>
-                        <li><strong>3 : </strong>개통 시도 내역을 기록하여 상담 업무 개선</li>
-                        <li><strong>4 : </strong>개통 직원들을 위한 페이지를 구축하여 개통 업무 자동화 </li>
+                        <li><strong>1 : </strong>서버리스 아키텍처(AWS Lambda)를 활용한 병렬처리로 블로킹 문제 해결</li>
+                        <li><strong>1-1 : </strong>추후에는 Node.js 서버를 사용하여 비동기 처리</li>
+                        <li><strong>2 : </strong>Redis 캐싱으로 중복 API 호출 및 DB insert 최소화</li>
+                        <li><strong>3 : </strong>통신사별 API를 활용한 관리자용 개통 자동화 페이지 구현</li>
+                        <li><strong>4 : </strong>CloudWatch, DB에 개통 진행 상황을 저장하여 상담 업무 개선, 장애 대응</li>
                     </ul>
                     <h5>결과<span class="period-mark">.</span></h5>
                     <ul>
-                        <li><strong>생산성 :</strong> 신규 기능 개발 주기 1달 이상 → 1주 이내로 단축</li>
-                        <li><strong>경제성 :</strong> 외주 비용 100% 절감, SEO 개선으로 방문자 증가 (하루 1000→10만명)</li>
-                        <li><strong>보안 :</strong> 스팸 광고, 랜섬웨어 해결 및 방지</li>
-                        <li><strong>팀 역량 :</strong> 내부 개발팀 기술 스택 현대화 및 자체 개발 역량 확보</li>
+                        <li>셀프 개통 성공률 5% 미만 → 95% 이상 달성</li>
+                        <li>개통 관련 고객 문의량 90% 감소</li>
+                        <li>수동 재처리 업무 100% 감소</li>
+                        <li>개통 실패로 인한 매출 손실, 고객 이탈 해결</li>
                     </ul>
-
-                    <h5>3. 클라우드 서버 전환 및 ISMS 인증 대응<span class="period-mark">.</span></h5>
-                    <p>
-                        MVNO 통신사 라이센스 유지를 위한 ISMS 보안 요구사항에 대응했습니다.
-                        단계적 마이그레이션으로 서비스 중단을 최소화하며 AWS 인프라 전환을 완료하고 ISMS 인증을 획득했습니다.
-                    </p>
-
-                    <h5>Business Impact<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>개발 주기 대폭 단축으로 비즈니스 가치 향상 (1달 이상 → 1주 이내)</li>
-                        <li>외주 의존도 감소로 비용 절감 및 내부 역량 확보</li>
-                        <li>시스템 응답 지연, 실패율 개선 (5% 미만 → 95%이상) 으로 고객 만족도 및 신뢰도 향상</li>
-                        <li>ISMS 인증 획득으로 회사 신뢰성 확보</li>
-                    </ul>
-
-                    <h5>Tech Journey<span class="period-mark">.</span></h5>
-                    <p>Oracle 레거시 → React+Spring Boot+EC2 → Next.js+FastAPI+Vercel → Node.js + AWS ECS</p>
                 </div>
 
                 <div class="project">
-                    <h4>스마텔 통합 플랫폼<span class="period-mark">.</span></h4>
-                    <h5>Description<span class="period-mark">.</span></h5>
-                    <p>
-                        외주업체별로 분산된 기존 시스템을 통합하여 스마텔 비즈니스 프로세스를 담은 통합 플랫폼을 설계하고 개발했습니다.
-                        고객용 서비스와 직원용 관리 시스템을 구축하여 현재 40만명의 고객 데이터를 처리하고 있습니다.
-                    </p>
-                    <h5>Business Impact<span class="period-mark">.</span></h5>
+                    <h4>AWS 클라우드 마이그레이션 및 ISMS 인증<span class="period-mark">.</span></h4>
+                    <h5>문제점 및 배경<span class="period-mark">.</span></h5>
                     <ul>
-                        <li><strong>마케팅 효과</strong> - SEO 최적화로 구글 검색 1페이지 진입 > 유입 증가</li>
-                        <li><strong>가입 효율화</strong> - 온라인 하루 1천명 가입 처리, 전자서명으로 명의도용 차단 하루 10 건 이상 → 0건</li>
-                        <li><strong>개통 성공률 향상</strong> - 기존 5% 미만 성공률을 95%까지 개선하여 개통 업무 자동화 및 매출 향상</li>
-                        <li><strong>운영 자동화</strong> - 상담 업무 효율성 향상 및 자동화를 통한 50% 비용 절감</li>
+                        <li>MVNO 통신사 라이센스 유지를 위한 ISMS 보안 요구사항 대응 필요</li>
+                        <li>기존 시스템은 ISMS 보안 인증 기준 미충족</li>
                     </ul>
-                    <h5>Key Contributions<span class="period-mark">.</span></h5>
+                    <h5>원인 분석<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>고객 및 관리자를 위한 통합 서비스 플랫폼 구축</li>
-                        <li>상위 통신사 연동 프로세스를 안정적으로 처리하는 시스템 설계</li>
-                        <li>보안과 사용성을 모두 확보한 온라인 가입 프로세스 구현</li>
-                        <li>빠른 서비스 변화에 대응할 수 있는 시스템</li>
+                        <li>기존 온프레미스 서버의 노후화로 인한 OS 버전 기준 미충족</li>
+                        <li>기존 온프레미스 오라클 DB의 라이센스 부재</li>
+                        <li>생산성을 위해 사용한 Vercel, Mongodb Atlas 환경은 내부망 요구사항 미충족</li>
+                        <li>모니터링 및 로그 관리 체계 미존재</li>
                     </ul>
-                    <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p>AWS, TypeScript, Next.js, Node.js, PostgreSQL, Redis</p>
+                    <h5>해결책 수립<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>AWS 보안 서비스 활용한 ISMS 요구사항 충족 인프라 설계</li>
+                        <li>단계적 마이그레이션으로 서비스 중단 최소화</li>
+                        <li>데이터 암호화 및 접근 제어 시스템 강화</li>
+                        <li>자동화된 보안 모니터링 및 로그 관리 체계 구축</li>
+                    </ul>
+                    <h5>해결 과정<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li><strong>1 : </strong>AWS VPC를 활용하여 서버 및 DB 전용망 구축</li>
+                        <li><strong>2 : </strong>KMS를 활용한 DB 암호화 및 RDS 이중화로 가용성 확보</li>
+                        <li><strong>3 : </strong>Github Actions + Codeploy를 활용한 무중단 배포 구성</li>
+                        <li><strong>4 : </strong>ECS Fargate를 도입하여 전통 서버의 취약점 방지</li>
+                        <li><strong>5 : </strong>로드밸런서 이중화(NLB + ALB)와 NAT Gateway로 네트워크 안정성 확보</li>
+                        <li><strong>6 : </strong>Cloudwatch + Firehose로 로그 저장 자동화 구현</li>
+                    </ul>
+                    <h5>결과<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>ISMS 인증 취득으로 통신사 라이센스 유지, 브랜드 신뢰도 확보</li>
+                        <li>서비스 중단 없이 클라우드 마이그레이션 완료</li>
+                        <li>관리형 서비스(ECS 등) 도입으로 운영 부담 감소</li>
+                        <li>오라클 → 오로라 마이그레이션으로 DB 라이센스 비용 절감</li>
+                    </ul>
                 </div>
 
                 <div class="project">
-                    <h4>웰컴저축은행 가입 신청서<span class="period-mark">.</span></h4>
-                    <h5>Description<span class="period-mark">.</span></h5>
-                    <p>
-                        웰컴저축은행 앱 내에서 스마텔 요금제 가입이 가능한 서비스를 개발하여 새로운 고객 유입 채널을 확보했습니다.
-                        은행권 보안 정책을 준수하면서도 원활한 서비스 연동을 달성했습니다.
-                    </p>
-                    <h5>Business Impact<span class="period-mark">.</span></h5>
+                    <h4>웰컴저축은행 인앱 신청<span class="period-mark">.</span></h4>
+                    <h5>배경<span class="period-mark">.</span></h5>
                     <ul>
+                        <li>웰컴저축은행과의 제휴를 통한 새로운 고객층 확보</li>
+                    </ul>
+                    <h5>원인 분석<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>은행권 보안 정책으로 인한 외부 서비스 연동 제약</li>
+                        <li>금융권 전용망 요구사항과 기존 서버 환경 불일치</li>
+                        <li>실시간 가입 처리를 위한 안정적인 네트워크 연결 필요</li>
+                    </ul>
+                    <h5>해결책 수립<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>양사 간의 VPN 구축 필요</li>
+                        <li>웰컴저축은행 API 규격에 맞는 전용 인터페이스 개발</li>
+                    </ul>
+                    <h5>해결 과정<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li><strong>1 :</strong> AWS Site-to-Site VPN을 활용한 전용선 구축</li>
+                        <li><strong>2 :</strong> VPC 프라이빗 서브넷에 웰컴저축은행 전용 서버 구성</li>
+                        <li><strong>3 :</strong> 양사 간 API 연동 테스트 및 장애 대응 프로세스 수립</li>
+                    </ul>
+                    <h5>결과<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>웰컴저축은행 앱 내 스마텔 가입 서비스 성공 오픈</li>
                         <li>은행 고객층 대상 신규 가입 채널 확보</li>
-                        <li>안전한 서비스 연동으로 양사 고객 만족도 확보</li>
+                        <li>금융권 보안 기준을 충족하는 안정적인 서비스 연동 달성</li>
+                        <li>B2B 파트너십 확대를 위한 기반 마련</li>
                     </ul>
-                    <h5>Key Contributions<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>은행권 보안 요구사항을 만족하는 전용망 + VPN 구성</li>
-                        <li>양사 간 원활한 협업을 위한 API 연동 및 규격 정의</li>
-                    </ul>
-                    <h5>Tech Stack<span class="period-mark">.</span></h5>
-                    <p>AWS VPC, Site-to-Site VPN, NLB, NAT Gateway</p>
                 </div>
             </div>
         </div>
