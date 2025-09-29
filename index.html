@@ -20,10 +20,10 @@
             <br>
             저는 임익환입니다<span class="period-mark">.</span>
         </h1>
-        <p class="big-paragraph"> 4년 차 소프트웨어 엔지니어입니다.<br>
-            TypeScript, Nodejs, Python, AWS 등의 기술로 시스템을 설계, 개발, 운영한 경험이 있습니다.<br/>
-            레거시에서 신규 시스템으로 전환, 클라우드 환경으로 마이그레이션 등 다양한 경험을 가지고 있습니다.<br/>
-            빠르게 구현하고 지속적으로 개선하는 접근법으로 비즈니스 가치를 실현합니다.
+        <p class="big-paragraph"> 4년 차 소프트웨어 엔지니어입니다.<br/>
+            TypeScript, Node.js, Python, AWS 등의 기술로 시스템을 설계, 개발, 운영한 경험이 있습니다.<br/>
+            레거시에서 신규 시스템으로 전환, 온프레미스에서 클라우드로의 마이그레이션, 보안 인증 취득을 주도한 경험이 있습니다.<br/>
+            빠르게 구현하고 지속적으로 개선하는 접근법으로 비즈니스 가치를 검증합니다.
         </p>
     </section>
 
@@ -53,13 +53,6 @@
             </div>
             <div class="row-right">
                 <div class="project">
-                    <h4>Overall<span class="period-mark">.</span></h4>
-                    <p>
-                        MVNO 통신사에서 고객 및 직원들을 위한 시스템 개발, 업무 프로세스 자동화, 클라우드 인프라 업무등을 담당합니다.
-                    </p>
-                </div>
-
-                <div class="project">
                     <h4>통합 시스템 재개발<span class="period-mark">.</span></h4>
                     <h5>문제점 및 배경<span class="period-mark">.</span></h5>
                     <ul>
@@ -85,7 +78,7 @@
                         <li><strong>1 : </strong>외주 업체로부터 시스템 구조, 소스코드 요구</li>
                         <li><strong>2 : </strong>익숙한 React+Spring Boot+EC2로 핵심 기능부터 구축</li>
                         <li><strong>3 : </strong>Next.js+Vercel을 도입하여 SEO 개선 및 CI/CD 구축</li>
-                        <li><strong>4 : </strong>AWS ECS Fargate + ELB를 활용한 보안 강화 및 고가용성 확보</li>
+                        <li><strong>4 : </strong>AWS ECS Fargate + ELB를 활용한 보안 강화 및 고가용성 확보 (Vercel → ECS 전환, 상세 내용은 별도 프로젝트 참고)</li>
                     </ul>
                     <h5>결과<span class="period-mark">.</span></h5>
                     <ul>
@@ -131,6 +124,40 @@
                         <li>개통 관련 고객 문의량 90% 감소</li>
                         <li>수동 재처리 업무 100% 감소</li>
                         <li>개통 실패로 인한 매출 손실, 고객 이탈 해결</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <h4>서버리스에서 고정 서버 기반으로 아키텍처 전환<span class="period-mark">.</span></h4>
+                    <h5>문제점 및 배경<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>Lambda, Vercel 등의 서버리스 환경에서 DB 커넥션 고갈 문제 발생</li>
+                        <li>Lambda/Vercel의 stateless 특성으로 커넥션 풀 재사용 불가</li>
+                        <li>동시 요청 증가 시 DB 최대 커넥션 수 초과</li>
+                    </ul>
+                    <h5>원인 분석<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>서버리스 함수는 요청마다 새로운 실행 환경 생성</li>
+                        <li>각 함수가 독립적인 DB 커넥션 생성하여 커넥션 풀 관리 불가</li>
+                        <li>콜드 스타트 시 커넥션 생성 지연으로 타임아웃 발생</li>
+                        <li>함수 종료 후에도 커넥션이 즉시 해제되지 않음</li>
+                    </ul>
+                    <h5>해결책 수립<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>서버리스가 아닌 고정된 서버 환경으로 전환하여 커넥션 관리</li>
+                        <li>또는 MongoDB 같은 NoSQL로 변경하여 커넥션 제한 문제 우회</li>
+                    </ul>
+                    <h5>해결 과정<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li><strong>1 : </strong>NoSQL 전환 vs 고정 서버 전환 비교 후 고정 서버 선택 (데이터 정합성, 비용 고려)</li>
+                        <li><strong>2 : </strong>Lambda/Vercel → AWS ECS Fargate로 마이그레이션</li>
+                        <li><strong>3 : </strong>ALB 오토스케일링 구성으로 서버리스와 비슷한 가용성 확보</li>
+                    </ul>
+                    <h5>결과<span class="period-mark">.</span></h5>
+                    <ul>
+                        <li>DB 커넥션 에러 100% 해결</li>
+                        <li>응답 시간, 콜드스타트 문제 해결</li>
+                        <li>서버리스 대비 예측 가능한 성능 확보</li>
                     </ul>
                 </div>
 
@@ -245,6 +272,17 @@
 
     <section>
         <h2>Skills<span class="period-mark">.</span></h2>
+        <div class="other">
+            <h3>요약<span class="period-mark">.</span></h3>
+            <p>
+                <strong>Backend:</strong> TypeScript, Node.js, Python, FastAPI, Java, Spring Boot<br>
+                <strong>Frontend:</strong> React, Next.js, TailwindCSS, Three.js<br>
+                <strong>Database:</strong> MySQL, PostgreSQL, Aurora, Redis, MongoDB<br>
+                <strong>AWS:</strong> ECS, Lambda, VPC, ALB/NLB, RDS, CloudWatch, CodeDeploy<br>
+                <strong>DevOps:</strong> Docker, GitHub Actions
+            </p>
+        </div>
+
         <div class="other">
             <h3>Backend<span class="period-mark">.</span></h3>
             <ul>
