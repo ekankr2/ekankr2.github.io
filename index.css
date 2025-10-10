@@ -63,18 +63,18 @@ a:hover {
 }
 
 h1 {
-    font-size: 5rem;
-    line-height: 1.1;
+    font-size: 3.5rem;
+    line-height: 1.2;
 }
 
 @media screen and (max-width: 960px) {
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 4rem 0 2rem 0;
 }
 
@@ -131,14 +131,14 @@ ul > li:before {
 }
 
 .big-paragraph {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 1.4;
     font-weight: 500;
 }
 
 @media screen and (max-width: 960px) {
     .big-paragraph {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
