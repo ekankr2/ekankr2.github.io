@@ -53,29 +53,33 @@
             </div>
             <div class="row-right">
                 <div class="project">
-                    <h4>통합 시스템 재개발<span class="period-mark">.</span></h4>
+                    <h4>홈페이지 관리 시스템 및 온라인 가입 신청 구축<span class="period-mark">.</span></h4>
                     <h5>배경 및 문제<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>외주 업체에 분산된 시스템으로 신규 개발 평균 1-2개월 소요, 긴급 대응 불가</li>
+                        <li>홈페이지 콘텐츠, 요금제/가입 옵션 수정 시 외주 업체 의뢰 필요 (평균 2주 소요)</li>
+                        <li>프로모션 대응 지연으로 마케팅 기회 손실</li>
+                        <li>외주 업체에 분산된 시스템으로 긴급 대응 불가</li>
                         <li>스팸 광고, 랜섬웨어 감염 등 보안 사고 발생</li>
                     </ul>
                     <h5>해결 과정<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>외주 업체로부터 시스템 인수 후 React + Spring Boot 기반 통합 플랫폼 구축</li>
-                        <li>Next.js + Vercel 도입하여 SEO 개선 및 CI/CD 구축</li>
-                        <li>AWS ECS Fargate + ELB로 전환하여 보안 강화 및 고가용성 확보</li>
+                        <li><strong>1 : </strong>기존 레거시 PHP 시스템을 React + Spring Boot로 재구축</li>
+                        <li><strong>2 : </strong>잦은 요구사항 변경에 대응하기 위해 Next.js + Vercel 기반 풀스택 아키텍처로 전환</li>
+                        <li><strong>3 : </strong>홈페이지 콘텐츠, 요금제, 가입 옵션을 관리하는 통합 CMS 구축</li>
+                        <li><strong>4 : </strong>AWS 클라우드로 전환 (상세 내용은 '서버리스에서 고정 서버 기반으로 아키텍처 전환' 및 'AWS 클라우드 마이그레이션 및 ISMS 인증' 참고)</li>
                     </ul>
                     <h5>결과<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>신규 기능 개발 주기 1개월 → 1주 단축, 외주 비용 100% 절감</li>
-                        <li>SEO 개선으로 일 방문자 50 → 5,000명</li>
-                        <li>보안 사고 제로화 및 내부 개발 역량 확보</li>
+                        <li>콘텐츠/요금제 수정 2주 → 직원 직접 즉시 처리 가능</li>
+                        <li>신규 기능 개발 주기 단축 (1개월 → 1주)</li>
+                        <li>SEO 개선으로 일 가입자 10 → 2,000명</li>
+                        <li>내부 개발 역량 확보, 보안 강화</li>
                     </ul>
                 </div>
 
                 <div class="project">
                     <h4>개통 프로세스 개선 및 자동화<span class="period-mark">.</span></h4>
-                    <h5>문제점 및 배경<span class="period-mark">.</span></h5>
+                    <h5>배경 및 문제<span class="period-mark">.</span></h5>
                     <ul>
                         <li>기존 업체에서 개발한 개통 프로세스는 성공률이 5% 미만으로 매우 낮음</li>
                         <li>요금 프로모션 진행 시 개통, CS 업무 마비 → 고객 이탈로 연결</li>
@@ -91,7 +95,7 @@
                     <ul>
                         <li><strong>1 : </strong>빠른 문제 해결을 위해 Python FastAPI로 신규 개통 시스템 구축</li>
                         <li><strong>2 : </strong>통신사 API 응답 지연으로 블로킹 문제 발생, AWS Lambda 도입하여 병렬 처리로 해결</li>
-                        <li><strong>3 : </strong>Lambda의 stateless 특성으로 DB 커넥션 고갈 문제 발생, Node.js + ECS Fargate로 전환하여 커넥션 풀 관리</li>
+                        <li><strong>3 : </strong>Lambda의 DB 커넥션 문제로 ECS Fargate로 전환 (상세 내용은 '서버리스에서 고정 서버 기반으로 아키텍처 전환' 참고)</li>
                         <li><strong>4 : </strong>Redis 캐싱으로 중복 API 호출 및 DB insert 최소화</li>
                         <li><strong>5 : </strong>통신사별 API를 활용한 관리자용 개통 자동화 프로세스 구현</li>
                         <li><strong>6 : </strong>개통 진행 상황을 저장하고 확인하는 페이지를 구축하여 상담 업무 개선 및 장애 대응</li>
@@ -107,7 +111,7 @@
 
                 <div class="project">
                     <h4>서버리스에서 고정 서버 기반으로 아키텍처 전환<span class="period-mark">.</span></h4>
-                    <h5>문제점 및 배경<span class="period-mark">.</span></h5>
+                    <h5>배경 및 문제<span class="period-mark">.</span></h5>
                     <ul>
                         <li>Lambda, Vercel 등의 서버리스 환경에서 DB 커넥션 고갈 문제 발생</li>
                         <li>Lambda/Vercel의 stateless 특성으로 커넥션 풀 재사용 불가</li>
@@ -133,15 +137,16 @@
                     </ul>
                     <h5>결과<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>DB 커넥션 에러 100% 해결</li>
-                        <li>응답 시간, 콜드스타트 문제 해결</li>
-                        <li>서버리스 대비 예측 가능한 성능 확보</li>
+                        <li>홈페이지, 개통 시스템 등 전사 서비스의 DB 커넥션 에러 100% 해결</li>
+                        <li>응답 시간 안정화 및 콜드스타트 문제 해결</li>
+                        <li>서버리스 대비 예측 가능한 성능 확보로 서비스 안정성 향상</li>
+                        <li>이후 신규 서비스를 ECS 기반으로 표준화</li>
                     </ul>
                 </div>
 
                 <div class="project">
                     <h4>AWS 클라우드 마이그레이션 및 ISMS 인증<span class="period-mark">.</span></h4>
-                    <h5>문제점 및 배경<span class="period-mark">.</span></h5>
+                    <h5>배경 및 문제<span class="period-mark">.</span></h5>
                     <ul>
                         <li>MVNO 통신사 라이센스 유지를 위한 ISMS 보안 요구사항 대응 필요</li>
                         <li>기존 시스템은 ISMS 보안 인증 기준 미충족</li>
@@ -184,7 +189,7 @@
                     <ul>
                         <li>웰컴저축은행과의 제휴를 통한 새로운 고객층 확보</li>
                     </ul>
-                    <h5>원인 분석<span class="period-mark">.</span></h5>
+                    <h5>문제점<span class="period-mark">.</span></h5>
                     <ul>
                         <li>은행권 보안 정책으로 인한 외부 서비스 연동 제약</li>
                         <li>금융권 전용망 요구사항과 기존 서버 환경 불일치</li>
