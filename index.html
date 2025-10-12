@@ -77,30 +77,24 @@
                     <h4>개통 프로세스 개선 및 자동화<span class="period-mark">.</span></h4>
                     <h5>문제점 및 배경<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>상위 통신사 개통 API 연동 시 성공률이 5% 미만으로 매우 낮음</li>
+                        <li>기존 업체에서 개발한 개통 프로세스는 성공률이 5% 미만으로 매우 낮음</li>
                         <li>요금 프로모션 진행 시 개통, CS 업무 마비 → 고객 이탈로 연결</li>
                     </ul>
                     <h5>원인 분석<span class="period-mark">.</span></h5>
                     <ul>
-                        <li>응답시간이 긴 통신사 API를 FastAPI 서버에서 호출 시 블로킹 발생</li>
                         <li>잘못 개발된 개통 프로세스, 에러 처리 및 자동 재시도 로직 부재</li>
+                        <li>통신사 API 응답 시간이 길어 블로킹 발생</li>
                         <li>자동화된 개통 시스템의 부재 (직원 1인당 1시간 1건 개통이 한계)</li>
                         <li>개통 진행 기록이 없어 상담 불가능</li>
                     </ul>
-                    <h5>해결책 수립<span class="period-mark">.</span></h5>
-                    <ul>
-                        <li>비동기 처리로 또는 동시성 처리로 블로킹 문제 해결 필요</li>
-                        <li>외부 API 중복 호출, DB Insert 최소화 필요</li>
-                        <li>상담을 위한 개통 진행상황 저장 및 모니터링 시스템 구축</li>
-                        <li>개통 직원들을 위한 개통 자동화 시스템 필요</li>
-                    </ul>
                     <h5>해결 과정<span class="period-mark">.</span></h5>
                     <ul>
-                        <li><strong>1 : </strong>서버리스 아키텍처(AWS Lambda)를 활용한 병렬처리로 블로킹 문제 해결</li>
-                        <li><strong>1-1 : </strong>추후에는 Node.js 서버를 사용하여 비동기 처리</li>
-                        <li><strong>2 : </strong>Redis 캐싱으로 중복 API 호출 및 DB insert 최소화</li>
-                        <li><strong>3 : </strong>통신사별 API를 활용한 관리자용 개통 자동화 페이지 구현</li>
-                        <li><strong>4 : </strong>CloudWatch, DB에 개통 진행 상황을 저장하여 상담 업무 개선, 장애 대응</li>
+                        <li><strong>1 : </strong>빠른 문제 해결을 위해 Python FastAPI로 신규 개통 시스템 구축</li>
+                        <li><strong>2 : </strong>통신사 API 응답 지연으로 블로킹 문제 발생, AWS Lambda 도입하여 병렬 처리로 해결</li>
+                        <li><strong>3 : </strong>Lambda의 stateless 특성으로 DB 커넥션 고갈 문제 발생, Node.js + ECS Fargate로 전환하여 커넥션 풀 관리</li>
+                        <li><strong>4 : </strong>Redis 캐싱으로 중복 API 호출 및 DB insert 최소화</li>
+                        <li><strong>5 : </strong>통신사별 API를 활용한 관리자용 개통 자동화 프로세스 구현</li>
+                        <li><strong>6 : </strong>개통 진행 상황을 저장하고 확인하는 페이지를 구축하여 상담 업무 개선 및 장애 대응</li>
                     </ul>
                     <h5>결과<span class="period-mark">.</span></h5>
                     <ul>
